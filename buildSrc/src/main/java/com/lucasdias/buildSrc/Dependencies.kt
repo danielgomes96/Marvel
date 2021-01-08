@@ -60,6 +60,8 @@ object Dependencies {
 
         const val base = ":base"
 
+        const val core = ":core"
+
         const val character = ":feature-character"
 
         const val extensions = ":extensions"

@@ -8,7 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.lucasdias.base.connectivity.Connectivity
+import com.lucasdias.core.connectivity.Connectivity
 import com.lucasdias.extensions.animateGoneToVisible
 import com.lucasdias.extensions.animateVisibleToGone
 import com.lucasdias.extensions.showConnectivitySnackbar
