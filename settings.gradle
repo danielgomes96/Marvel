@@ -4,6 +4,7 @@ include ':core'
 include ':data'
 include ':domain'
 include ':extensions'
+include ':feature-comic-list'
 include ':resource'
 include ':ui-component'
 rootProject.name = "Marvel Comics"
