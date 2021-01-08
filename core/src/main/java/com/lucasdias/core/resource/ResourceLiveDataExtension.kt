@@ -1,4 +1,4 @@
-package com.lucasdias.base.resource
+package com.lucasdias.core.resource
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

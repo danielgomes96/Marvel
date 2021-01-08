@@ -1,4 +1,4 @@
-package com.lucasdias.base.resource
+package com.lucasdias.core.resource
 
 import java.lang.Exception
 
