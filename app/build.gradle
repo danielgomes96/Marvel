@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    implementation project(Dependencies.Module.extensions)
+
     implementation Dependencies.Core.kotlin_stdlib
 
     implementation Dependencies.DI.koin
