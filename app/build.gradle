@@ -31,7 +31,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = Dependencies.jvm_target_version
+        jvmTarget = Versions.jvm_target_version
     }
 }
 
