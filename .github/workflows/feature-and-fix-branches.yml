@@ -10,8 +10,7 @@ on:
       - 'fix/*'
       - 'fix/**'
       - '*'
-      - '!master'
-      - '!release*'
+      - '!main'
 
 jobs:
   test:
