@@ -5,7 +5,7 @@ import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
 @Suppress("RemoveExplicitTypeArguments", "USELESS_CAST")
-val baseModule = module {
+val coreModule = module {
 
     single {
         Connectivity(androidApplication())
