@@ -3,33 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="@dimen/layout_height_card_component">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/image_card_view_card_component"
+    <ImageView
+        android:id="@+id/image_card_component"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/image_card_view_height_card_component"
-        android:layout_marginStart="@dimen/image_card_view_margin_start_card_component"
-        android:layout_marginEnd="@dimen/image_card_view_margin_end_card_component"
-        android:layout_marginTop="@dimen/image_card_view_margin_top_card_component"
-        android:elevation="@dimen/image_card_view_elevation_card_component"
-        app:cardCornerRadius="@dimen/image_card_radius_card_component"
+        android:layout_height="match_parent"
+        android:background="@color/mine_shaft"
+        android:contentDescription="@string/image_content_description_card_component"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/image_card_component"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/mine_shaft"
-            android:contentDescription="@string/image_content_description_card_component"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </com.google.android.material.card.MaterialCardView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/information_card_view_card_component"
@@ -40,14 +25,15 @@
         android:elevation="@dimen/information_card_view_elevation_card_component"
         android:maxHeight="@dimen/information_card_view_max_height_card_component"
         android:translationY="@dimen/information_card_view_translation_y_card_component"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_card_view_card_component">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/information_layout_card_component"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:background="@color/bright_red"
             android:orientation="vertical"
             android:padding="@dimen/information_layout_padding_card_component">
 
@@ -60,24 +46,8 @@
                 android:gravity="center"
                 android:maxLines="1"
                 android:textColor="@color/wild_sand"
-                tools:text="Hero Name" />
+                tools:text="Comic title" />
 
-            <TextView
-                android:id="@+id/description_card_component"
-                style="@style/P5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxHeight="@dimen/description_max_height_card_component"
-                android:maxLines="8"
-                android:textColor="@color/nobel" />
         </LinearLayout>
-
-        <View
-            android:id="@+id/separator_card_component"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/separator_height_card_component"
-            android:layout_gravity="bottom"
-            android:background="@color/bright_red" />
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

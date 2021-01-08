@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--    Card Component-->
-    <string name="image_content_description_card_component">Hero picture</string>
+    <string name="image_content_description_card_component">Comic picture</string>
 
     <!--    Error View Component-->
     <string name="message_text_error_view_component">An error has occurred.</string>
