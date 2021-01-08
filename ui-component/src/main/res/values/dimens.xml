@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Button Component-->
+    <dimen name="button_height_default_button_component">60dp</dimen>
+    <dimen name="button_height_small_button_component">44dp</dimen>
+    <dimen name="soft_round_button_padding_button_component">16dp</dimen>
+    <dimen name="soft_round_button_corner_radius_button_component">8dp</dimen>
+    <dimen name="material_button_default_margin_button_component">12dp</dimen>
+
+    <!--    Card Component-->
+    <dimen name="image_card_radius_card_component">6dp</dimen>
+    <dimen name="information_card_radius_card_component">12dp</dimen>
+    <dimen name="image_card_view_height_card_component">300dp</dimen>
+    <dimen name="image_card_view_margin_start_card_component">16dp</dimen>
+    <dimen name="image_card_view_margin_end_card_component">16dp</dimen>
+    <dimen name="information_card_view_margin_start_card_component">32dp</dimen>
+    <dimen name="information_card_view_margin_end_card_component">32dp</dimen>
+    <dimen name="information_card_view_elevation_card_component">4dp</dimen>
+    <dimen name="information_card_view_max_height_card_component">200dp</dimen>
+    <dimen name="information_card_view_translation_y_card_component">-18dp</dimen>
+    <dimen name="information_layout_padding_card_component">16dp</dimen>
+    <dimen name="title_max_lines_card_component">1</dimen>
+    <dimen name="description_max_height_card_component">150dp</dimen>
+    <dimen name="description_max_lines_card_component">8</dimen>
+    <dimen name="separator_height_card_component">8dp</dimen>
+    <dimen name="image_card_view_elevation_card_component">3dp</dimen>
+    <dimen name="image_card_view_margin_top_card_component">16dp</dimen>
+
+    <!--    Error View Component-->
+    <dimen name="image_view_height_error_view_component">100dp</dimen>
+    <dimen name="image_margin_bottom_view_error_view_component">16dp</dimen>
+    <dimen name="retry_button_margin_bottom_error_view_component">16dp</dimen>
+</resources>
