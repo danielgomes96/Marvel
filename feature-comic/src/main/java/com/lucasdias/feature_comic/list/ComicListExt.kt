@@ -8,7 +8,6 @@ import com.lucasdias.extensions.model.SnackbarProperties
 import com.lucasdias.extensions.showSnackbar
 import com.lucasdias.feature_comic.R
 
-
 fun ComicListFragment.showProgressbarForPaginationRequest(
     isNotInitialRequest: Boolean,
     errorViewVisibility: Int,

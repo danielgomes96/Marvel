@@ -5,11 +5,11 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lucasdias.base.presentation.BaseFragment
+import com.lucasdias.core.resource.observe
 import com.lucasdias.domain.model.Comic
 import com.lucasdias.extensions.animateVisibleToGone
-import com.lucasdias.feature_comic.R
-import com.lucasdias.core.resource.observe
 import com.lucasdias.extensions.scrollSetup
+import com.lucasdias.feature_comic.R
 import com.lucasdias.feature_comic.databinding.FragmentComicListBinding
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
