@@ -35,9 +35,9 @@ class ComicListRepositoryImpl(
 
     private fun Resource<Response<ComicGlobalResponse>>.getTreatedResponse(): Resource<List<Comic>> {
         this.value()?.body()?.data?.results?.let {
-            val characterList = it.toDomain()
+            val comicList = it.toDomain()
 
-            return Resource.Success(characterList)
+            return Resource.Success(comicList)
         } ?: run {
             return Resource.Error(this.error() ?: Exception())
         }

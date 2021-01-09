@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ComicListService {
-    @GET("characters")
+    @GET("comics")
     suspend fun fetchComicList(
         @Query("limit") limit: Int,
         @Query("offset") offset: Int,

@@ -6,20 +6,20 @@ import com.lucasdias.domain.model.Comic
 import com.lucasdias.domain.model.ComicThumbnail
 
 fun List<ComicResponse>.toDomain(): List<Comic> {
-    val characterList = mutableListOf<Comic>()
+    val comicList = mutableListOf<Comic>()
 
     this.forEach {
         if (it.canAddComic()) {
-            val character = Comic(
+            val comic = Comic(
                 id = it.id,
-                name = it.name,
+                title = it.title,
                 thumbnail = it.thumbnail?.toDomain()
             )
-            characterList.add(character)
+            comicList.add(comic)
         }
     }
 
-    return characterList
+    return comicList
 }
 
 fun ComicThumbnailResponse.toDomain(): ComicThumbnail {
@@ -31,5 +31,5 @@ fun ComicThumbnailResponse.toDomain(): ComicThumbnail {
 
 private fun ComicResponse.canAddComic(): Boolean {
     return thumbnail != null &&
-            thumbnail.path?.contains("image_not_available") == true
+            thumbnail.path?.contains("image_not_available") != true
 }
