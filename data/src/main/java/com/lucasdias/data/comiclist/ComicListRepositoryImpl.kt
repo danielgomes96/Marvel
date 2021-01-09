@@ -1,10 +1,10 @@
-package com.lucasdias.data.comic
+package com.lucasdias.data.comiclist
 
 import com.lucasdias.core.resource.Resource
-import com.lucasdias.data.comic.remote.ComicListService
-import com.lucasdias.data.comic.remote.enum.ComicListRequestOrderBy
-import com.lucasdias.data.comic.remote.mapper.toDomain
-import com.lucasdias.data.comic.remote.model.ComicGlobalResponse
+import com.lucasdias.data.comiclist.remote.ComicListService
+import com.lucasdias.data.comiclist.remote.enum.ComicListRequestOrderBy
+import com.lucasdias.data.comiclist.remote.mapper.toDomain
+import com.lucasdias.data.comiclist.remote.model.ComicGlobalResponse
 import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.domain.repository.ComicListRepository
 import retrofit2.Response

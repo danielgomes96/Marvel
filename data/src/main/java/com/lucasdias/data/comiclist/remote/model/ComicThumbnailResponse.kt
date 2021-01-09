@@ -1,4 +1,4 @@
-package com.lucasdias.data.comic.remote.model
+package com.lucasdias.data.comiclist.remote.model
 
 class ComicThumbnailResponse(
     val path: String?,

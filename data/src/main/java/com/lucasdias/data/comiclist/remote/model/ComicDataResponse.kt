@@ -1,4 +1,4 @@
-package com.lucasdias.data.comic.remote.model
+package com.lucasdias.data.comiclist.remote.model
 
 data class ComicDataResponse(
     val offset: Int?,

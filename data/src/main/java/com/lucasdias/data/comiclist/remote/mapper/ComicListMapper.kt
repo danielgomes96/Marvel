@@ -1,7 +1,7 @@
-package com.lucasdias.data.comic.remote.mapper
+package com.lucasdias.data.comiclist.remote.mapper
 
-import com.lucasdias.data.comic.remote.model.ComicResponse
-import com.lucasdias.data.comic.remote.model.ComicThumbnailResponse
+import com.lucasdias.data.comiclist.remote.model.ComicResponse
+import com.lucasdias.data.comiclist.remote.model.ComicThumbnailResponse
 import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.domain.model.ComicThumbnail
 

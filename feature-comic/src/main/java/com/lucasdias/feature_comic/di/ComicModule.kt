@@ -1,6 +1,8 @@
 package com.lucasdias.feature_comic.di
 
+import com.lucasdias.domain.usecase.FetchComicDetail
 import com.lucasdias.domain.usecase.FetchComicList
+import com.lucasdias.feature_comic.detail.ComicDetailViewModel
 import com.lucasdias.feature_comic.list.ComicListAdapter
 import com.lucasdias.feature_comic.list.ComicListViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -13,6 +15,13 @@ val comicModule = module {
     viewModel {
         ComicListViewModel(
             get<FetchComicList>(),
+            get<CoroutineDispatcher>()
+        )
+    }
+
+    viewModel {
+        ComicDetailViewModel(
+            get<FetchComicDetail>(),
             get<CoroutineDispatcher>()
         )
     }

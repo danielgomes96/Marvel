@@ -1,6 +1,6 @@
-package com.lucasdias.data.comic.remote
+package com.lucasdias.data.comiclist.remote
 
-import com.lucasdias.data.comic.remote.model.ComicGlobalResponse
+import com.lucasdias.data.comiclist.remote.model.ComicGlobalResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

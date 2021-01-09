@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".detail.ComicDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/success_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.lucasdias.ui_components.error.ErrorViewComponent
+        android:id="@+id/error_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:visibility="gone" />
 
-</FrameLayout>
+    <include
+        android:id="@+id/loading_layout"
+        layout="@layout/fragment_comic_detail_shimmer"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
