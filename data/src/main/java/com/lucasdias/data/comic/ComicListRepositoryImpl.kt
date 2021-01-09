@@ -13,6 +13,9 @@ class ComicListRepositoryImpl(
     private val service: ComicListService
 ) : ComicListRepository {
 
+    private var currentComicsCount = 0
+    private val limitOfComicsPerRequest = 40
+
     override suspend fun fetch(
         apiPublicKey: String,
         timesmap: String,
@@ -21,8 +24,8 @@ class ComicListRepositoryImpl(
         val response: Resource<Response<ComicGlobalResponse>> =
             Resource.of {
                 service.fetchComicList(
-                    limit = 40,
-                    offset = 40,
+                    limit = limitOfComicsPerRequest,
+                    offset = currentComicsCount,
                     orderBy = ComicListRequestOrderBy.MODIFIED.text,
                     apiKey = apiPublicKey,
                     timestamp = timesmap,
@@ -37,9 +40,15 @@ class ComicListRepositoryImpl(
         this.value()?.body()?.data?.results?.let {
             val comicList = it.toDomain()
 
+            updateCurrentComicsCount()
+
             return Resource.Success(comicList)
         } ?: run {
             return Resource.Error(this.error() ?: Exception())
         }
+    }
+
+    private fun updateCurrentComicsCount() {
+        currentComicsCount += limitOfComicsPerRequest
     }
 }
