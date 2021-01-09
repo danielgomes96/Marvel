@@ -18,5 +18,9 @@
 
     <fragment
         android:id="@+id/comic_detail_fragment"
-        android:name="com.lucasdias.feature_comic.detail.ComicDetailFragment" />
+        android:name="com.lucasdias.feature_comic.detail.ComicDetailFragment">
+        <argument
+            android:name="comic_id"
+            app:argType="integer"/>
+    </fragment>
 </navigation>

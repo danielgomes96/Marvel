@@ -17,7 +17,7 @@ val comicModule = module {
         )
     }
 
-    factory { (navigateToComicDetailAction: ((Int?) -> Unit)) ->
+    factory { (navigateToComicDetailAction: ((Int) -> Unit)) ->
         ComicListAdapter(navigateToComicDetailAction)
     }
 }

@@ -25,7 +25,7 @@ class ComicListFragment : BaseFragment<List<Comic>>(
 ) {
 
     override val viewModel by viewModel<ComicListViewModel>()
-    private val adapter by inject<ComicListAdapter> { parametersOf({ comicId: Int? -> navigateToComicDetail(comicId) }) }
+    private val adapter by inject<ComicListAdapter> { parametersOf({ comicId: Int -> navigateToComicDetail(comicId) }) }
     private lateinit var binding: FragmentComicListBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -86,8 +86,8 @@ class ComicListFragment : BaseFragment<List<Comic>>(
         binding.progressBar.animateVisibleToGone()
     }
 
-    private fun navigateToComicDetail(comicId: Int?) {
-        val directions = ComicListFragmentDirections.navigateToComicDetail()
+    private fun navigateToComicDetail(comicId: Int) {
+        val directions = ComicListFragmentDirections.navigateToComicDetail(comicId)
         findNavController().navigate(directions)
     }
 }

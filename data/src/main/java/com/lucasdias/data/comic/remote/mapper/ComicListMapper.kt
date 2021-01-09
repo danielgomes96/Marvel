@@ -9,14 +9,7 @@ fun List<ComicResponse>.toDomain(): List<Comic> {
     val comicList = mutableListOf<Comic>()
 
     this.forEach {
-        if (it.canAddComic()) {
-            val comic = Comic(
-                id = it.id,
-                title = it.title,
-                thumbnail = it.thumbnail?.toDomain()
-            )
-            comicList.add(comic)
-        }
+        comicList.addJustValidComic(it)
     }
 
     return comicList
@@ -29,7 +22,20 @@ fun ComicThumbnailResponse.toDomain(): ComicThumbnail {
     )
 }
 
-private fun ComicResponse.canAddComic(): Boolean {
-    return thumbnail != null &&
-            thumbnail.path?.contains("image_not_available") != true
+private fun MutableList<Comic>.addJustValidComic(comicResponse: ComicResponse) {
+    comicResponse.also {
+        if (
+            it.id != null &&
+            it.title != null &&
+            it.thumbnail != null &&
+            it.thumbnail.path?.contains("image_not_available") != true
+        ) {
+            val comic = Comic(
+                id = it.id,
+                title = it.title,
+                thumbnail = it.thumbnail.toDomain()
+            )
+            this.add(comic)
+        }
+    }
 }

@@ -9,7 +9,7 @@ import com.lucasdias.feature_comic.databinding.ComicListItemBinding
 import com.lucasdias.ui_components.card.model.CardProperties
 import com.lucasdias.ui_components.card.model.CardThumbnailProperties
 
-class ComicListAdapter(private val navigateToComicDetailAction: (Int?) -> Unit) : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
+class ComicListAdapter(private val navigateToComicDetailAction: (Int) -> Unit) : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
 
     private val comicList = mutableListOf<Comic>()
 
@@ -38,7 +38,7 @@ class ComicListAdapter(private val navigateToComicDetailAction: (Int?) -> Unit) 
 
     class ViewHolder(
         private val itemBinding: ComicListItemBinding,
-        private val navigateToComicDetailAction: (Int?) -> Unit
+        private val navigateToComicDetailAction: (Int) -> Unit
     ) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
