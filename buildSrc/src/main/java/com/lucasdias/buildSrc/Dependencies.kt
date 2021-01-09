@@ -84,6 +84,8 @@ object Dependencies {
          * https://github.com/pinterest/ktlint
          */
         const val ktlint: String = "com.pinterest:ktlint:" + Versions.ktlint
+
+        const val navigation_safe_args: String = "androidx.navigation:navigation-safe-args-gradle-plugin:" + Versions.navigation
     }
 
     object Test {

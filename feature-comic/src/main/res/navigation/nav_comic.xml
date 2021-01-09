@@ -2,10 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_comic"
-    app:startDestination="@id/comicListFragment">
+    app:startDestination="@id/comic_list_fragment">
 
     <fragment
-        android:id="@+id/comicListFragment"
-        android:name="com.lucasdias.feature_comic.list.ComicListFragment" >
+        android:id="@+id/comic_list_fragment"
+        android:name="com.lucasdias.feature_comic.list.ComicListFragment">
+        <action
+            android:id="@+id/navigate_to_comic_detail"
+            app:destination="@id/comic_detail_fragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/comic_detail_fragment"
+        android:name="com.lucasdias.feature_comic.detail.ComicDetailFragment" />
 </navigation>

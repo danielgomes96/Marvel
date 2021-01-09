@@ -2,13 +2,13 @@ package com.lucasdias.feature_comic.list
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lucasdias.base.presentation.BaseFragment
 import com.lucasdias.core.resource.observe
 import com.lucasdias.domain.model.Comic
 import com.lucasdias.extensions.animateVisibleToGone
+import com.lucasdias.extensions.findNavController
 import com.lucasdias.extensions.scrollSetup
 import com.lucasdias.feature_comic.R
 import com.lucasdias.feature_comic.databinding.FragmentComicListBinding
@@ -87,6 +87,7 @@ class ComicListFragment : BaseFragment<List<Comic>>(
     }
 
     private fun navigateToComicDetail(comicId: Int?) {
-        Toast.makeText(requireContext(), comicId?.toString(), Toast.LENGTH_LONG).show()
+        val directions = ComicListFragmentDirections.navigateToComicDetail()
+        findNavController().navigate(directions)
     }
 }
