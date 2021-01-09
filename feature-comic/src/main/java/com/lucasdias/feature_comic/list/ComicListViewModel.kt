@@ -1,21 +1,23 @@
 package com.lucasdias.feature_comic.list
 
-import android.util.Log
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import com.lucasdias.base.presentation.BaseViewModel
+import com.lucasdias.core.resource.Resource
+import com.lucasdias.domain.model.Comic
 import com.lucasdias.domain.usecase.FetchComicList
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.CoroutineDispatcher
 
 class ComicListViewModel(
-    private val fetchComicList: FetchComicList
-) : ViewModel() {
+    private val fetchComicList: FetchComicList,
+    coroutineDispatcher: CoroutineDispatcher
+) : BaseViewModel<List<Comic>>(coroutineDispatcher) {
 
-    fun fetch() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val result = fetchComicList()
+    override suspend fun request(): Resource<List<Comic>> {
+        return fetchComicList()
+    }
 
-            Log.i("ComicListViewModel - Result", result.value().toString())
+    fun requestNextPage() {
+        if (isNotLoading()) {
+            executeRequest()
         }
     }
 }
