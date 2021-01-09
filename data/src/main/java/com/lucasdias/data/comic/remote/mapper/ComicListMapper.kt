@@ -2,11 +2,11 @@ package com.lucasdias.data.comic.remote.mapper
 
 import com.lucasdias.data.comic.remote.model.ComicResponse
 import com.lucasdias.data.comic.remote.model.ComicThumbnailResponse
-import com.lucasdias.domain.model.Comic
+import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.domain.model.ComicThumbnail
 
-fun List<ComicResponse>.toDomain(): List<Comic> {
-    val comicList = mutableListOf<Comic>()
+fun List<ComicResponse>.toDomain(): List<ComicSummary> {
+    val comicList = mutableListOf<ComicSummary>()
 
     this.forEach {
         comicList.addJustValidComic(it)
@@ -22,7 +22,7 @@ fun ComicThumbnailResponse.toDomain(): ComicThumbnail {
     )
 }
 
-private fun MutableList<Comic>.addJustValidComic(comicResponse: ComicResponse) {
+private fun MutableList<ComicSummary>.addJustValidComic(comicResponse: ComicResponse) {
     comicResponse.also {
         if (
             it.id != null &&
@@ -30,7 +30,7 @@ private fun MutableList<Comic>.addJustValidComic(comicResponse: ComicResponse) {
             it.thumbnail != null &&
             it.thumbnail.path?.contains("image_not_available") != true
         ) {
-            val comic = Comic(
+            val comic = ComicSummary(
                 id = it.id,
                 title = it.title,
                 thumbnail = it.thumbnail.toDomain()

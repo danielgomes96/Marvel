@@ -3,7 +3,7 @@ package com.lucasdias.feature_comic.list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.lucasdias.domain.model.Comic
+import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.feature_comic.R
 import com.lucasdias.feature_comic.databinding.ComicListItemBinding
 import com.lucasdias.ui_components.card.model.CardProperties
@@ -11,10 +11,10 @@ import com.lucasdias.ui_components.card.model.CardThumbnailProperties
 
 class ComicListAdapter(private val navigateToComicDetailAction: (Int) -> Unit) : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
 
-    private val comicList = mutableListOf<Comic>()
+    private val comicList = mutableListOf<ComicSummary>()
 
-    fun updateComicList(comics: List<Comic>) {
-        this.comicList.addAll(comics)
+    fun updateComicList(comicSummaries: List<ComicSummary>) {
+        this.comicList.addAll(comicSummaries)
         notifyDataSetChanged()
     }
 
@@ -32,7 +32,7 @@ class ComicListAdapter(private val navigateToComicDetailAction: (Int) -> Unit) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (comicList.isNotEmpty()) {
-            holder.bind(comic = comicList[position])
+            holder.bind(comicSummary = comicList[position])
         }
     }
 
@@ -42,12 +42,12 @@ class ComicListAdapter(private val navigateToComicDetailAction: (Int) -> Unit) :
     ) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
-        fun bind(comic: Comic) {
-            val cardProperties = comic.getCardProperties()
+        fun bind(comicSummary: ComicSummary) {
+            val cardProperties = comicSummary.getCardProperties()
             itemBinding.layoutComicListItem.applyProperties(cardProperties)
         }
 
-        private fun Comic.getCardProperties(): CardProperties {
+        private fun ComicSummary.getCardProperties(): CardProperties {
 
             val cardThumbnailProperties = CardThumbnailProperties(
                 url = thumbnail?.getUrl(),

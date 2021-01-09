@@ -6,7 +6,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lucasdias.base.presentation.BaseFragment
 import com.lucasdias.core.resource.observe
-import com.lucasdias.domain.model.Comic
+import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.extensions.animateVisibleToGone
 import com.lucasdias.extensions.findNavController
 import com.lucasdias.extensions.scrollSetup
@@ -17,7 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 @Suppress("UNCHECKED_CAST")
-class ComicListFragment : BaseFragment<List<Comic>>(
+class ComicListFragment : BaseFragment<List<ComicSummary>>(
     successViewId = R.id.recycler_view,
     loadingViewId = R.id.loading_layout,
     errorViewId = R.id.error_view,
@@ -77,7 +77,7 @@ class ComicListFragment : BaseFragment<List<Comic>>(
     override fun onSuccess(model: Any?) {
         super.onSuccess(model)
         binding.progressBar.animateVisibleToGone()
-        adapter.updateComicList(model as List<Comic>? ?: emptyList())
+        adapter.updateComicList(model as List<ComicSummary>? ?: emptyList())
     }
 
     override fun onError(throwable: Throwable?) {

@@ -5,7 +5,7 @@ import com.lucasdias.data.comic.remote.ComicListService
 import com.lucasdias.data.comic.remote.enum.ComicListRequestOrderBy
 import com.lucasdias.data.comic.remote.mapper.toDomain
 import com.lucasdias.data.comic.remote.model.ComicGlobalResponse
-import com.lucasdias.domain.model.Comic
+import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.domain.repository.ComicListRepository
 import retrofit2.Response
 
@@ -20,7 +20,7 @@ class ComicListRepositoryImpl(
         apiPublicKey: String,
         timesmap: String,
         hash: String
-    ): Resource<List<Comic>> {
+    ): Resource<List<ComicSummary>> {
         val response: Resource<Response<ComicGlobalResponse>> =
             Resource.of {
                 service.fetchComicList(
@@ -36,7 +36,7 @@ class ComicListRepositoryImpl(
         return response.getTreatedResponse()
     }
 
-    private fun Resource<Response<ComicGlobalResponse>>.getTreatedResponse(): Resource<List<Comic>> {
+    private fun Resource<Response<ComicGlobalResponse>>.getTreatedResponse(): Resource<List<ComicSummary>> {
         this.value()?.body()?.data?.results?.let {
             val comicList = it.toDomain()
 

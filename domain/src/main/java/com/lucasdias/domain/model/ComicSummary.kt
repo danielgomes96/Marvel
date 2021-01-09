@@ -1,6 +1,6 @@
 package com.lucasdias.domain.model
 
-data class Comic(
+data class ComicSummary(
     val id: Int,
     val title: String,
     val thumbnail: ComicThumbnail
