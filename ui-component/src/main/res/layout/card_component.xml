@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_card_component"
     android:layout_width="match_parent"
     android:layout_height="@dimen/layout_height_card_component">
 
@@ -39,10 +40,10 @@
                 android:id="@+id/title_card_component"
                 style="@style/U1_bold"
                 android:layout_width="wrap_content"
-                android:maxWidth="@dimen/title_text_view_max_width_card_component"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:gravity="center"
+                android:maxWidth="@dimen/title_text_view_max_width_card_component"
                 android:maxLines="1"
                 android:textColor="@color/wild_sand"
                 tools:text="Comic title" />

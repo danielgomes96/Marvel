@@ -17,20 +17,24 @@ class CardComponent @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
+    private var layout: ConstraintLayout
     private var image: ImageView
     private var title: TextView
     private var informationCard: CardView
 
     init {
         View.inflate(context, R.layout.card_component, this)
+        layout = findViewById(R.id.layout_card_component)
         image = findViewById(R.id.image_card_component)
         title = findViewById(R.id.title_card_component)
         informationCard = findViewById(R.id.information_card_view_card_component)
         informationCardSetup()
     }
 
-    private fun informationCardSetup() {
-        informationCard.setBackgroundColor(context.getColor(R.color.mine_shaft))
+    fun onComponentClickListener(onClick: (() -> Unit)) {
+        layout.setOnClickListener {
+            onClick.invoke()
+        }
     }
 
     fun applyProperties(properties: CardProperties) {
@@ -39,5 +43,9 @@ class CardComponent @JvmOverloads constructor(
             url = properties.thumbnail?.url,
             errorPlaceHolderId = properties.thumbnail?.placeHolder
         )
+    }
+
+    private fun informationCardSetup() {
+        informationCard.setBackgroundColor(context.getColor(R.color.mine_shaft))
     }
 }
