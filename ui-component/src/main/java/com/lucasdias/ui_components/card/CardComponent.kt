@@ -31,9 +31,9 @@ class CardComponent @JvmOverloads constructor(
         informationCardSetup()
     }
 
-    fun onComponentClickListener(onClick: (() -> Unit)) {
+    fun onComponentClickListener(onClick: (() -> Unit)?) {
         layout.setOnClickListener {
-            onClick.invoke()
+            onClick?.invoke()
         }
     }
 
@@ -43,6 +43,8 @@ class CardComponent @JvmOverloads constructor(
             url = properties.thumbnail?.url,
             errorPlaceHolderId = properties.thumbnail?.placeHolder
         )
+
+        onComponentClickListener(properties.action)
     }
 
     private fun informationCardSetup() {

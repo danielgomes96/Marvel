@@ -2,6 +2,7 @@ package com.lucasdias.feature_comic.list
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lucasdias.base.presentation.BaseFragment
@@ -13,6 +14,7 @@ import com.lucasdias.feature_comic.R
 import com.lucasdias.feature_comic.databinding.FragmentComicListBinding
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 @Suppress("UNCHECKED_CAST")
 class ComicListFragment : BaseFragment<List<Comic>>(
@@ -23,7 +25,7 @@ class ComicListFragment : BaseFragment<List<Comic>>(
 ) {
 
     override val viewModel by viewModel<ComicListViewModel>()
-    private val adapter by inject<ComicListAdapter>()
+    private val adapter by inject<ComicListAdapter> { parametersOf({ comicId: Int? -> navigateToComicDetail(comicId) }) }
     private lateinit var binding: FragmentComicListBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -82,5 +84,9 @@ class ComicListFragment : BaseFragment<List<Comic>>(
         super.onError(throwable)
         showErrorSnackbarForPaginationRequest(viewModel.isNotInitialRequest())
         binding.progressBar.animateVisibleToGone()
+    }
+
+    private fun navigateToComicDetail(comicId: Int?) {
+        Toast.makeText(requireContext(), comicId?.toString(), Toast.LENGTH_LONG).show()
     }
 }

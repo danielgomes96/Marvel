@@ -9,7 +9,7 @@ import com.lucasdias.feature_comic.databinding.ComicListItemBinding
 import com.lucasdias.ui_components.card.model.CardProperties
 import com.lucasdias.ui_components.card.model.CardThumbnailProperties
 
-class ComicListAdapter : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
+class ComicListAdapter(private val navigateToComicDetailAction: (Int?) -> Unit) : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
 
     private val comicList = mutableListOf<Comic>()
 
@@ -25,7 +25,7 @@ class ComicListAdapter : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
             false
         )
 
-        return ViewHolder(itemBinding)
+        return ViewHolder(itemBinding, navigateToComicDetailAction)
     }
 
     override fun getItemCount(): Int = comicList.count()
@@ -36,7 +36,10 @@ class ComicListAdapter : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
         }
     }
 
-    class ViewHolder(private val itemBinding: ComicListItemBinding) :
+    class ViewHolder(
+        private val itemBinding: ComicListItemBinding,
+        private val navigateToComicDetailAction: (Int?) -> Unit
+    ) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(comic: Comic) {
@@ -45,12 +48,13 @@ class ComicListAdapter : RecyclerView.Adapter<ComicListAdapter.ViewHolder>() {
         }
 
         private fun Comic.getCardProperties(): CardProperties {
+
             val cardThumbnailProperties = CardThumbnailProperties(
                 url = thumbnail?.getUrl(),
                 placeHolder = R.drawable.thumbnail_place_holder
             )
 
-            return CardProperties(id, title, cardThumbnailProperties)
+            return CardProperties(id, title, cardThumbnailProperties) { navigateToComicDetailAction(id) }
         }
     }
 }
