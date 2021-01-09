@@ -44,6 +44,10 @@ android {
 }
 
 dependencies {
+    implementation project(Dependencies.Module.base)
+    implementation project(Dependencies.Module.core)
+    implementation project(Dependencies.Module.domain)
+
     implementation Dependencies.Core.kotlin_stdlib
     implementation Dependencies.Core.core_ktx
 

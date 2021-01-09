@@ -62,7 +62,7 @@ object Dependencies {
 
         const val core = ":core"
 
-        const val character = ":feature-character"
+        const val comic = ":feature-comic"
 
         const val extensions = ":extensions"
 
@@ -70,15 +70,7 @@ object Dependencies {
 
         const val domain = ":domain"
 
-        const val home = ":feature-home"
-
-        const val navigation = ":navigation"
-
         const val resource = ":resource"
-
-        const val shared = ":shared"
-
-        const val search = ":search"
 
         const val ui_component = ":ui-component"
     }

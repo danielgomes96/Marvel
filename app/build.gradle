@@ -38,6 +38,7 @@ android {
 dependencies {
     implementation project(Dependencies.Module.base)
     implementation project(Dependencies.Module.core)
+    implementation project(Dependencies.Module.comic)
     implementation project(Dependencies.Module.data)
     implementation project(Dependencies.Module.domain)
     implementation project(Dependencies.Module.extensions)

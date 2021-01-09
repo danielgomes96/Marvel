@@ -3,8 +3,10 @@ ext {
 * Marvel API
 * */
   RELEASE_MARVEL_API_URL = '\"https://gateway.marvel.com:443/v1/public/\"'
+  RELEASE_MARVEL_API_PUBLIC_KEY = '\"80af1bfa73ca93ee32db1212d0e68584\"'
   RELEASE_MARVEL_API_PRIVATE_KEY = '\"d4c5f4b98ff0be23ad791d2b2a8c0e6d9500e77b\"'
 
   DEBUG_MARVEL_API_URL = '\"https://gateway.marvel.com:443/v1/public/\"'
+  DEBUG_MARVEL_API_PUBLIC_KEY = '\"80af1bfa73ca93ee32db1212d0e68584\"'
   DEBUG_MARVEL_API_PRIVATE_KEY = '\"d4c5f4b98ff0be23ad791d2b2a8c0e6d9500e77b\"'
 }

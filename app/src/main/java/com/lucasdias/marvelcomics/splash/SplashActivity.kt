@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.lucasdias.base.presentation.BaseActivity
 import com.lucasdias.marvelcomics.R
 
 class SplashActivity : AppCompatActivity() {
@@ -24,9 +25,9 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    // TODO: Implement navigation to first Activity of the application
     private fun startNextViewWithDelay() {
         Handler(Looper.getMainLooper()).postDelayed({
+            BaseActivity.launch(this, R.navigation.nav_comic)
         }, DELAY_TIME)
     }
 
