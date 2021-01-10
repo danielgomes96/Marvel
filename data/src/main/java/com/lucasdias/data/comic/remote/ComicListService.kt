@@ -1,6 +1,7 @@
-package com.lucasdias.data.comiclist.remote
+package com.lucasdias.data.comic.remote
 
-import com.lucasdias.data.comiclist.remote.model.ComicGlobalResponse
+import com.lucasdias.data.comic.remote.model.ComicSummaryResponse
+import com.lucasdias.data.comic.remote.model.GlobalResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -14,5 +15,5 @@ interface ComicListService {
         @Query("apikey") apiKey: String,
         @Query("ts") timestamp: String,
         @Query("hash") hash: String
-    ): Response<ComicGlobalResponse>
+    ): Response<GlobalResponse<ComicSummaryResponse>>
 }

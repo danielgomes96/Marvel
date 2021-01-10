@@ -1,4 +1,4 @@
-package com.lucasdias.data.comiclist.remote.enum
+package com.lucasdias.data.comic.remote.enum
 
 enum class ComicListRequestOrderBy(val text: String) {
     NAME("name"),

@@ -1,10 +1,11 @@
-package com.lucasdias.data.comiclist
+package com.lucasdias.data.comic
 
 import com.lucasdias.core.resource.Resource
-import com.lucasdias.data.comiclist.remote.ComicListService
-import com.lucasdias.data.comiclist.remote.enum.ComicListRequestOrderBy
-import com.lucasdias.data.comiclist.remote.mapper.toDomain
-import com.lucasdias.data.comiclist.remote.model.ComicGlobalResponse
+import com.lucasdias.data.comic.remote.ComicListService
+import com.lucasdias.data.comic.remote.enum.ComicListRequestOrderBy
+import com.lucasdias.data.comic.remote.mapper.toDomain
+import com.lucasdias.data.comic.remote.model.ComicSummaryResponse
+import com.lucasdias.data.comic.remote.model.GlobalResponse
 import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.domain.repository.ComicListRepository
 import retrofit2.Response
@@ -21,7 +22,7 @@ class ComicListRepositoryImpl(
         timesmap: String,
         hash: String
     ): Resource<List<ComicSummary>> {
-        val response: Resource<Response<ComicGlobalResponse>> =
+        val response: Resource<Response<GlobalResponse<ComicSummaryResponse>>> =
             Resource.of {
                 service.fetchComicList(
                     limit = limitOfComicsPerRequest,
@@ -36,7 +37,7 @@ class ComicListRepositoryImpl(
         return response.getTreatedResponse()
     }
 
-    private fun Resource<Response<ComicGlobalResponse>>.getTreatedResponse(): Resource<List<ComicSummary>> {
+    private fun Resource<Response<GlobalResponse<ComicSummaryResponse>>>.getTreatedResponse(): Resource<List<ComicSummary>> {
         this.value()?.body()?.data?.results?.let {
             val comicList = it.toDomain()
 

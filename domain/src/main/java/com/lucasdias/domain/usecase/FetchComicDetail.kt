@@ -15,6 +15,6 @@ class FetchComicDetail(
 
         val hash = getHash(timesmap, apiPrivateKey, apiPublicKey)
 
-        return comicDetailRepository.fetch(comicId, apiPublicKey, timesmap, hash)
+        comicDetailRepository.fetch(comicId, apiPublicKey, timesmap, hash)
     }
 }

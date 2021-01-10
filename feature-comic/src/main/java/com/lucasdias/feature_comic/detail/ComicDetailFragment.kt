@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.lucasdias.base.presentation.BaseFragment
-import com.lucasdias.domain.model.Comic
+import com.lucasdias.domain.model.ComicDetail
 import com.lucasdias.feature_comic.R
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ComicDetailFragment : BaseFragment<Comic>(
+class ComicDetailFragment : BaseFragment<ComicDetail>(
     successViewId = R.id.success_view,
     loadingViewId = R.id.loading_layout,
     errorViewId = R.id.error_view,
@@ -25,7 +25,11 @@ class ComicDetailFragment : BaseFragment<Comic>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel.setArgumentForRequest(args.comicId)
         return inflater.inflate(R.layout.fragment_comic_detail, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.setArgumentForRequest(args.comicId)
+        super.onViewCreated(view, savedInstanceState)
     }
 }

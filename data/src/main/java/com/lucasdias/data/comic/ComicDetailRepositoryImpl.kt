@@ -1,8 +1,10 @@
-package com.lucasdias.data.comicdetail
+package com.lucasdias.data.comic
 
 import android.util.Log
 import com.lucasdias.core.resource.Resource
-import com.lucasdias.data.comicdetail.remote.ComicDetailService
+import com.lucasdias.data.comic.remote.ComicDetailService
+import com.lucasdias.data.comic.remote.model.ComicDetailResponse
+import com.lucasdias.data.comic.remote.model.GlobalResponse
 import com.lucasdias.domain.repository.ComicDetailRepository
 import retrofit2.Response
 
@@ -16,9 +18,9 @@ class ComicDetailRepositoryImpl(
         timesmap: String,
         hash: String
     ) {
-        val response: Resource<Response<Any>> =
+        val response: Resource<Response<GlobalResponse<ComicDetailResponse>>> =
             Resource.of {
-                service.fetchComicList(
+                service.fetchComicDetail(
                     comicId = comicId,
                     apiKey = apiPublicKey,
                     timestamp = timesmap,
