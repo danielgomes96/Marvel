@@ -1,6 +1,6 @@
 package com.lucasdias.domain.model
 
-class ComicThumbnail(
+class Image(
     val path: String?,
     val extension: String?
 ) {

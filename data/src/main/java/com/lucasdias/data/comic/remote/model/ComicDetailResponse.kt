@@ -9,5 +9,5 @@ data class ComicDetailResponse(
     val characters: CharactersResponse?,
     val stories: StoriesResponse?,
     val creators: CreatorsResponse?,
-    val images: List<ImageResponse?>?
+    val images: List<ImageResponse>?
 )

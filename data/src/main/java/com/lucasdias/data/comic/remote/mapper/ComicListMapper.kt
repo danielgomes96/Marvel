@@ -3,7 +3,7 @@ package com.lucasdias.data.comic.remote.mapper
 import com.lucasdias.data.comic.remote.model.ComicSummaryResponse
 import com.lucasdias.data.comic.remote.model.ImageResponse
 import com.lucasdias.domain.model.ComicSummary
-import com.lucasdias.domain.model.ComicThumbnail
+import com.lucasdias.domain.model.Image
 
 fun List<ComicSummaryResponse>.toDomain(): List<ComicSummary> {
     val comicList = mutableListOf<ComicSummary>()
@@ -13,13 +13,6 @@ fun List<ComicSummaryResponse>.toDomain(): List<ComicSummary> {
     }
 
     return comicList
-}
-
-fun ImageResponse.toDomain(): ComicThumbnail {
-    return ComicThumbnail(
-        path = this.path,
-        extension = this.extension
-    )
 }
 
 private fun MutableList<ComicSummary>.addJustValidComic(comicSummaryResponse: ComicSummaryResponse) {

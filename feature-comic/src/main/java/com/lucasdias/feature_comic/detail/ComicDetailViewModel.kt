@@ -14,8 +14,7 @@ class ComicDetailViewModel(
     private var comicId: String = ""
 
     override suspend fun request(): Resource<ComicDetail> {
-        fetchComicDetail(comicId)
-        return Resource.Success(ComicDetail(0))
+        return fetchComicDetail(comicId)
     }
 
     fun setArgumentForRequest(comicId: Int) {

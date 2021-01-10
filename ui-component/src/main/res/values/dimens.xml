@@ -18,10 +18,10 @@
     <dimen name="title_max_lines_card_component">1</dimen>
     <dimen name="description_max_height_card_component">150dp</dimen>
     <dimen name="description_max_lines_card_component">8</dimen>
+    <dimen name="title_text_view_max_width_card_component">320dp</dimen>
 
     <!--    Error View Component-->
     <dimen name="image_view_height_error_view_component">100dp</dimen>
     <dimen name="image_margin_bottom_view_error_view_component">16dp</dimen>
     <dimen name="retry_button_margin_bottom_error_view_component">16dp</dimen>
-    <dimen name="title_text_view_max_width_card_component">320dp</dimen>
 </resources>
