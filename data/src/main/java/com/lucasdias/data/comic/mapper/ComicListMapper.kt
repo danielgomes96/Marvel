@@ -1,4 +1,4 @@
-package com.lucasdias.data.comic.remote.mapper
+package com.lucasdias.data.comic.mapper
 
 import com.lucasdias.data.comic.remote.model.ComicSummaryResponse
 import com.lucasdias.domain.model.ComicSummary

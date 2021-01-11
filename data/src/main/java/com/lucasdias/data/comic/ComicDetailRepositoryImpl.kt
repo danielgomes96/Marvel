@@ -2,7 +2,7 @@ package com.lucasdias.data.comic
 
 import com.lucasdias.core.resource.Resource
 import com.lucasdias.data.comic.remote.ComicDetailService
-import com.lucasdias.data.comic.remote.mapper.toDomain
+import com.lucasdias.data.comic.mapper.toDomain
 import com.lucasdias.data.comic.remote.model.ComicDetailResponse
 import com.lucasdias.data.comic.remote.model.GlobalResponse
 import com.lucasdias.domain.model.ComicDetail
