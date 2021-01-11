@@ -24,7 +24,13 @@ class ComicListFragment : BaseFragment<List<ComicSummary>>(
 ) {
 
     override val viewModel by viewModel<ComicListViewModel>()
-    private val adapter by inject<ComicListAdapter> { parametersOf({ comicId: Int -> navigateToComicDetail(comicId) }) }
+    private val adapter by inject<ComicListAdapter> {
+        parametersOf({ comicId: Int ->
+            navigateToComicDetail(
+                comicId
+            )
+        })
+    }
     private lateinit var binding: FragmentComicListBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,15 +49,13 @@ class ComicListFragment : BaseFragment<List<ComicSummary>>(
         viewModel.responseLiveData.observe(viewLifecycleOwner, ::onLoading, ::onSuccess, ::onError)
     }
 
-    private fun recyclerViewSetup() {
+    private fun recyclerViewSetup() = with(binding.recyclerView) {
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        with(binding) {
-            recyclerView.setHasFixedSize(true)
-            recyclerView.layoutManager = layoutManager
-            recyclerView.adapter = adapter
-            recyclerView.scrollSetup(layoutManager) { viewModel.requestNextPage() }
-        }
+        setHasFixedSize(true)
+        this.layoutManager = layoutManager
+        this.adapter = adapter
+        scrollSetup(layoutManager) { viewModel.requestNextPage() }
     }
 
     override fun onLoading() {
