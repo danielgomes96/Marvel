@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/nero"
     tools:context=".detail.ComicDetailFragment">
 
     <ScrollView
@@ -21,6 +22,10 @@
                 android:id="@+id/view_pager_comic_detail"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/view_pager_height_comic_detail"/>
+
+            <include
+                android:id="@+id/title_comic_detail"
+                layout="@layout/comic_detail_section_with_text"/>
 
             <include
                 android:id="@+id/description_comic_detail"

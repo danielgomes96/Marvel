@@ -68,6 +68,11 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
 
     private fun sectionsSetup() {
         sectionSetup(
+            binding.titleComicDetail.titleComicSectionWithText,
+            R.string.title_title_section_comic_detail_fragment
+        )
+
+        sectionSetup(
             binding.descriptionComicDetail.titleComicSectionWithText,
             R.string.title_description_section_comic_detail_fragment
         )
@@ -133,6 +138,7 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
         creatorAdapter.updateList(model.creators)
 
         with(binding) {
+            titleComicDetail.textComicDetailSectionWithText.text = model.title
             descriptionComicDetail.textComicDetailSectionWithText.text = model.description
             pageCountComicDetail.textComicDetailSectionWithText.text = model.pageCount.toString()
             viewPagerComicDetail.updateImageUrls(model.images?.map { it.getUrl() }.orEmpty())

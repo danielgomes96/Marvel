@@ -1,4 +1,5 @@
 <resources>
+    <string name="title_title_section_comic_detail_fragment">Title</string>
     <string name="title_description_section_comic_detail_fragment">Description</string>
     <string name="title_page_quantity_section_comic_detail_fragment">Page quantity</string>
     <string name="title_character_section_comic_detail_fragment">Characters</string>
