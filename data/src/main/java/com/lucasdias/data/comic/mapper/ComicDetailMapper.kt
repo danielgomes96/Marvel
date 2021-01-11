@@ -19,7 +19,7 @@ fun ComicDetailResponse.toDomain(): ComicDetail {
         characters = characters?.toDomain(),
         stories = stories?.toDomain(),
         creators = creators?.toDomain(),
-        images = images?.addOnlyNotRepeatedItem()?.map { it.toDomain() }
+        images = images?.getOnlyNotRepeatedItem()?.map { it.toDomain() }
     )
 }
 
@@ -29,7 +29,7 @@ fun CharactersResponse.toDomain(): List<String>? {
             list.add(it.name.orEmpty())
         }
     }
-    return domainList.addOnlyNotRepeatedItem()
+    return domainList.getOnlyNotRepeatedItem()
 }
 
 fun StoriesResponse.toDomain(): List<String>? {
@@ -38,7 +38,7 @@ fun StoriesResponse.toDomain(): List<String>? {
             list.add(it.name.orEmpty())
         }
     }
-    return domainList.addOnlyNotRepeatedItem()
+    return domainList.getOnlyNotRepeatedItem()
 }
 
 fun CreatorsResponse.toDomain(): List<String>? {
@@ -48,12 +48,12 @@ fun CreatorsResponse.toDomain(): List<String>? {
         }
     }
 
-    return domainList.addOnlyNotRepeatedItem()
+    return domainList.getOnlyNotRepeatedItem()
 }
 
 fun PriceResponse.toDomain(): String = this.price.toString()
 
-fun <T>List<T>.addOnlyNotRepeatedItem(): List<T> {
+fun <T>List<T>.getOnlyNotRepeatedItem(): List<T> {
     return this.toSet().toList()
 }
 
