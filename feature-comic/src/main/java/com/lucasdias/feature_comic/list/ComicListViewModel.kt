@@ -11,13 +11,24 @@ class ComicListViewModel(
     coroutineDispatcher: CoroutineDispatcher
 ) : BaseViewModel<List<ComicSummary>>(coroutineDispatcher) {
 
+    private var requestIsBlocked = false
+
     override suspend fun request(): Resource<List<ComicSummary>> {
-        return fetchComicList()
+        return if (requestIsBlocked) {
+            requestIsBlocked = false
+            Resource.Success(emptyList())
+        } else {
+            fetchComicList()
+        }
     }
 
     fun requestNextPage() {
         if (isNotLoading()) {
             executeRequest()
         }
+    }
+
+    fun blockNextRequest() {
+        requestIsBlocked = true
     }
 }
