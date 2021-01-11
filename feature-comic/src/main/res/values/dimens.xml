@@ -12,11 +12,16 @@
     <dimen name="title_card_view_margin_end_comic_detail_list">4dp</dimen>
     <dimen name="title_card_view_elevation_comic_detail_list">4dp</dimen>
     <dimen name="title_card_view_max_height_comic_detail_list">200dp</dimen>
-    <dimen name="layout_padding_comic_detail_section_with_list">8dp</dimen>
-    <dimen name="layout_padding_comic_detail_section_with_text">8dp</dimen>
+    <dimen name="layout_padding_comic_detail_section_with_list">16dp</dimen>
+    <dimen name="layout_padding_comic_detail_section_with_text">16dp</dimen>
     <dimen name="title_max_lines_comic_detail_list">1</dimen>
     <dimen name="description_max_height_comic_detail_list">150dp</dimen>
     <dimen name="description_max_lines_comic_detail_list">8</dimen>
     <dimen name="title_text_view_max_width_comic_detail_list">320dp</dimen>
     <dimen name="view_pager_height_comic_detail">500dp</dimen>
+    <dimen name="title_padding_comic_section_with_text">4dp</dimen>
+    <dimen name="title_text_view_padding_horizontal_comic_detail_list">4dp</dimen>
+    <dimen name="card_view_padding_horizontal_comic_section_with_list">8dp</dimen>
+    <dimen name="text_padding_vertical_comic_detail_list_item">4dp</dimen>
+    <dimen name="card_view_padding_horizontal_comic_section_with_text">8dp</dimen>
 </resources>

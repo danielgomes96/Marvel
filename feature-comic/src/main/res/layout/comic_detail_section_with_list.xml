@@ -2,17 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/wild_sand"
     android:orientation="vertical"
     android:padding="@dimen/layout_padding_comic_detail_section_with_list">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_view_title_comic_section_with_list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/title_card_view_elevation_comic_detail_list">
+        android:elevation="@dimen/title_card_view_elevation_comic_detail_list"
+        android:paddingHorizontal="@dimen/card_view_padding_horizontal_comic_section_with_list">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/bright_red"
             android:orientation="vertical">
@@ -20,13 +22,13 @@
             <TextView
                 android:id="@+id/title_comic_section_with_list"
                 style="@style/U1_bold"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxWidth="@dimen/title_text_view_max_width_comic_detail_list"
                 android:maxLines="1"
-                android:paddingHorizontal="4dp"
+                android:paddingHorizontal="@dimen/title_text_view_padding_horizontal_comic_detail_list"
                 android:textColor="@color/wild_sand" />
         </LinearLayout>
 
