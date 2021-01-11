@@ -6,20 +6,19 @@
     android:padding="@dimen/layout_padding_comic_detail_section_with_list">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/title_card_view_comic_section_with_list"
+        android:id="@+id/card_view_title_comic_section_with_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="@dimen/title_card_view_elevation_comic_detail_list">
 
         <LinearLayout
-            android:id="@+id/title_layout_comic_section_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/bright_red"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/text_comic_section_title"
+                android:id="@+id/title_comic_section_with_list"
                 style="@style/U1_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +33,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recycler_view_comic_detail_section_with_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:overScrollMode="never" />

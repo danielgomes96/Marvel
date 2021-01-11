@@ -6,13 +6,12 @@
     android:padding="@dimen/layout_padding_comic_detail_section_with_text">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/title_card_view_comic_section_with_text"
+        android:id="@+id/card_view_title_comic_section_with_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="@dimen/title_card_view_elevation_comic_detail_list">
 
         <LinearLayout
-            android:id="@+id/title_layout_comic_section_with_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/bright_red"

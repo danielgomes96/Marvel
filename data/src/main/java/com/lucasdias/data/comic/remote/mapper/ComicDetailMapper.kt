@@ -24,30 +24,27 @@ fun ComicDetailResponse.toDomain(): ComicDetail {
 }
 
 fun CharactersResponse.toDomain(): List<String>? {
-    val domainModel = mutableListOf<String>().also { list ->
-        this.items?.forEach {
+    return mutableListOf<String>().also { list ->
+        items?.forEach {
             list.add(it.name.orEmpty())
         }
     }
-    return domainModel
 }
 
 fun StoriesResponse.toDomain(): List<String>? {
-    val domainModel = mutableListOf<String>().also { list ->
-        this.items?.forEach {
+    return mutableListOf<String>().also { list ->
+        items?.forEach {
             list.add(it.name.orEmpty())
         }
     }
-    return domainModel
 }
 
 fun CreatorsResponse.toDomain(): List<String>? {
-    val domainModel = mutableListOf<String>().also { list ->
-        this.items?.forEach {
+    return mutableListOf<String>().also { list ->
+        items?.forEach {
             list.add(it.name.orEmpty())
         }
     }
-    return domainModel
 }
 
 fun PriceResponse.toDomain(): String = this.price.toString()

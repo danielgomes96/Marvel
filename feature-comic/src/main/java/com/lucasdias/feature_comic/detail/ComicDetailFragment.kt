@@ -78,30 +78,30 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
         )
 
         sectionSetup(
-            binding.characterRecyclerViewComicDetail.textComicSectionTitle,
+            binding.characterRecyclerViewComicDetail.titleComicSectionWithList,
             R.string.title_character_section_comic_detail_fragment,
-            binding.characterRecyclerViewComicDetail.recyclerView,
+            binding.characterRecyclerViewComicDetail.recyclerViewComicDetailSectionWithList,
             characterAdapter
         )
 
         sectionSetup(
-            binding.priceRecyclerViewComicDetail.textComicSectionTitle,
+            binding.priceRecyclerViewComicDetail.titleComicSectionWithList,
             R.string.title_price_section_comic_detail_fragment,
-            binding.priceRecyclerViewComicDetail.recyclerView,
+            binding.priceRecyclerViewComicDetail.recyclerViewComicDetailSectionWithList,
             priceAdapter
         )
 
         sectionSetup(
-            binding.storyRecyclerViewComicDetail.textComicSectionTitle,
+            binding.storyRecyclerViewComicDetail.titleComicSectionWithList,
             R.string.title_story_section_comic_detail_fragment,
-            binding.storyRecyclerViewComicDetail.recyclerView,
+            binding.storyRecyclerViewComicDetail.recyclerViewComicDetailSectionWithList,
             storyAdapter
         )
 
         sectionSetup(
-            binding.creatorRecyclerViewComicDetail.textComicSectionTitle,
+            binding.creatorRecyclerViewComicDetail.titleComicSectionWithList,
             R.string.title_creator_section_comic_detail_fragment,
-            binding.characterRecyclerViewComicDetail.recyclerView,
+            binding.creatorRecyclerViewComicDetail.recyclerViewComicDetailSectionWithList,
             creatorAdapter
         )
     }
