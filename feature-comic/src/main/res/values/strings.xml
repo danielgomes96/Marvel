@@ -1,4 +1,8 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_description_section_comic_detail_fragment">Description</string>
+    <string name="title_page_quantity_section_comic_detail_fragment">Page quantity</string>
+    <string name="title_character_section_comic_detail_fragment">Characters</string>
+    <string name="title_price_section_comic_detail_fragment">Prices</string>
+    <string name="title_story_section_comic_detail_fragment">Stories</string>
+    <string name="title_creator_section_comic_detail_fragment">Creators</string>
 </resources>

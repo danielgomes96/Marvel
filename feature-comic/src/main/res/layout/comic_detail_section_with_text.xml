@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/layout_padding_comic_detail_section_with_text">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/title_card_view_comic_section_with_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/title_card_view_elevation_comic_detail_list">
+
+        <LinearLayout
+            android:id="@+id/title_layout_comic_section_with_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/bright_red"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_comic_section_with_text"
+                style="@style/U1_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="@dimen/title_text_view_max_width_comic_detail_list"
+                android:maxLines="1"
+                android:paddingHorizontal="4dp"
+                android:textColor="@color/wild_sand" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/text_comic_detail_section_with_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/P3" />
+
+</LinearLayout>

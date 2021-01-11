@@ -50,7 +50,7 @@ class ComicListAdapter(private val navigateToComicDetailAction: (Int) -> Unit) :
         private fun ComicSummary.getCardProperties(): CardProperties {
 
             val cardThumbnailProperties = CardThumbnailProperties(
-                url = thumbnail?.getUrl(),
+                url = thumbnail.getUrl(),
                 placeHolder = R.drawable.thumbnail_place_holder
             )
 

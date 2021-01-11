@@ -2,7 +2,6 @@ package com.lucasdias.feature_comic.list
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lucasdias.base.presentation.BaseFragment
 import com.lucasdias.core.resource.observe
@@ -33,17 +32,7 @@ class ComicListFragment : BaseFragment<List<ComicSummary>>(
         bindingSetup(view)
         observerSetup()
         recyclerViewSetup()
-        backButtonSetup()
-    }
-
-    private fun backButtonSetup() {
-        val backButtonCallback: OnBackPressedCallback =
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    binding.recyclerView.smoothScrollToPosition(0)
-                }
-            }
-        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), backButtonCallback)
+        backButtonSetup { binding.recyclerView.smoothScrollToPosition(0) }
     }
 
     private fun bindingSetup(view: View) {

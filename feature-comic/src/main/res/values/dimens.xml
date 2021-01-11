@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    Comic List Fragment-->
     <dimen name="progress_bar_height_comic_list_fragment">6dp</dimen>
     <dimen name="progress_bar_elevation_comic_list_fragment">1dp</dimen>
+
+    <!--    Comic Detail-->
+    <dimen name="layout_height_comic_detail_list">400dp</dimen>
+    <dimen name="title_card_view_padding_comic_detail_list">4dp</dimen>
+    <dimen name="title_card_view_margin_start_comic_detail_list">4dp</dimen>
+    <dimen name="title_card_view_margin_top_comic_detail_list">4dp</dimen>
+    <dimen name="title_card_view_margin_end_comic_detail_list">4dp</dimen>
+    <dimen name="title_card_view_elevation_comic_detail_list">4dp</dimen>
+    <dimen name="title_card_view_max_height_comic_detail_list">200dp</dimen>
+    <dimen name="layout_padding_comic_detail_section_with_list">8dp</dimen>
+    <dimen name="layout_padding_comic_detail_section_with_text">8dp</dimen>
+    <dimen name="title_max_lines_comic_detail_list">1</dimen>
+    <dimen name="description_max_height_comic_detail_list">150dp</dimen>
+    <dimen name="description_max_lines_comic_detail_list">8</dimen>
+    <dimen name="title_text_view_max_width_comic_detail_list">320dp</dimen>
 </resources>

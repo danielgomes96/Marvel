@@ -1,9 +1,7 @@
 package com.lucasdias.data.comic.remote.mapper
 
 import com.lucasdias.data.comic.remote.model.ComicSummaryResponse
-import com.lucasdias.data.comic.remote.model.ImageResponse
 import com.lucasdias.domain.model.ComicSummary
-import com.lucasdias.domain.model.Image
 
 fun List<ComicSummaryResponse>.toDomain(): List<ComicSummary> {
     val comicList = mutableListOf<ComicSummary>()

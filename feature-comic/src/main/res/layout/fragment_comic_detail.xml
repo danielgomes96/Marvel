@@ -5,12 +5,43 @@
     android:layout_height="match_parent"
     tools:context=".detail.ComicDetailFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:id="@+id/success_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/layout_success_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/description_comic_detail"
+                layout="@layout/comic_detail_section_with_text"/>
+
+            <include
+                android:id="@+id/page_count_comic_detail"
+                layout="@layout/comic_detail_section_with_text"/>
+
+            <include
+                android:id="@+id/character_recycler_view_comic_detail"
+                layout="@layout/comic_detail_section_with_list" />
+
+            <include
+                android:id="@+id/price_recycler_view_comic_detail"
+                layout="@layout/comic_detail_section_with_list" />
+
+            <include
+                android:id="@+id/story_recycler_view_comic_detail"
+                layout="@layout/comic_detail_section_with_list" />
+
+            <include
+                android:id="@+id/creator_recycler_view_comic_detail"
+                layout="@layout/comic_detail_section_with_list" />
+        </LinearLayout>
+    </ScrollView>
 
     <com.lucasdias.ui_components.error.ErrorViewComponent
         android:id="@+id/error_view"
@@ -21,6 +52,6 @@
     <include
         android:id="@+id/loading_layout"
         layout="@layout/comic_detail_shimmer"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

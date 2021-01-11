@@ -15,7 +15,7 @@ class ComicListRepositoryImpl(
 ) : ComicListRepository {
 
     private var currentComicsCount = 0
-    private val limitOfComicsPerRequest = 40
+    private val limitOfComicsPerRequest = 15
 
     override suspend fun fetch(
         apiPublicKey: String,
