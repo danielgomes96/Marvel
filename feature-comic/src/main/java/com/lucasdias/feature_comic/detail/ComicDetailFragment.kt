@@ -143,7 +143,7 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
         handleWithSectionContent(creatorRecyclerViewComicDetail, creatorAdapter, comicDetail.creators)
         handleWithSectionContent(titleComicDetail, comicDetail.title)
         handleWithSectionContent(descriptionComicDetail, comicDetail.description)
-        handleWithSectionContent(pageCountComicDetail, comicDetail.pageCount.toString())
+        handleWithSectionContent(pageCountComicDetail, comicDetail.pageCount.toStringIfPositiveOrEmptyString())
 
         viewPagerComicDetail.updateImageUrls(comicDetail.images?.map { it.getUrl() }.orEmpty())
     }
