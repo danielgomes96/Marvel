@@ -3,6 +3,7 @@ package com.lucasdias.base.presentation
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
@@ -59,6 +60,16 @@ abstract class BaseFragment<T : Any>(
             viewModel.updateConnectivityStatus(hasNetworkConnectivity)
             view?.showConnectivitySnackbar(hasNetworkConnectivity)
         })
+    }
+
+    open fun backButtonSetup(action: () -> Unit) {
+        val backButtonCallback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    action()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), backButtonCallback)
     }
 
     open fun onLoading() {
