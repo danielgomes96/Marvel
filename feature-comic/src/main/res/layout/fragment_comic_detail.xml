@@ -17,6 +17,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <com.lucasdias.ui_components.viewpager.ViewPagerComponent
+                android:id="@+id/view_pager_comic_detail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_pager_height_comic_detail"/>
+
             <include
                 android:id="@+id/description_comic_detail"
                 layout="@layout/comic_detail_section_with_text"/>

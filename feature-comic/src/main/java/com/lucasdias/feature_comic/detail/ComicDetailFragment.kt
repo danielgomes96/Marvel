@@ -135,6 +135,7 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
         with(binding) {
             descriptionComicDetail.textComicDetailSectionWithText.text = model.description
             pageCountComicDetail.textComicDetailSectionWithText.text = model.pageCount.toString()
+            viewPagerComicDetail.updateImageUrls(model.images?.map { it.getUrl() }.orEmpty())
         }
     }
 }

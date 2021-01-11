@@ -18,4 +18,5 @@
     <dimen name="description_max_height_comic_detail_list">150dp</dimen>
     <dimen name="description_max_lines_comic_detail_list">8</dimen>
     <dimen name="title_text_view_max_width_comic_detail_list">320dp</dimen>
+    <dimen name="view_pager_height_comic_detail">500dp</dimen>
 </resources>
