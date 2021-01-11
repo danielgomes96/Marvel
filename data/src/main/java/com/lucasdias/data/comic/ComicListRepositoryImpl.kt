@@ -14,8 +14,9 @@ class ComicListRepositoryImpl(
     private val service: ComicListService
 ) : ComicListRepository {
 
-    private var currentComicsCount = 0
-    private val limitOfComicsPerRequest = 15
+    private var currentRequestedComicsCount = 0
+    private val limitOfComicsPerRequest = 100
+    private val currentComicList = mutableListOf<ComicSummary>()
 
     override suspend fun fetch(
         apiPublicKey: String,
@@ -26,7 +27,7 @@ class ComicListRepositoryImpl(
             Resource.of {
                 service.fetchComicList(
                     limit = limitOfComicsPerRequest,
-                    offset = currentComicsCount,
+                    offset = currentRequestedComicsCount,
                     orderBy = ComicListRequestOrderBy.MODIFIED.text,
                     apiKey = apiPublicKey,
                     timestamp = timesmap,
@@ -39,7 +40,7 @@ class ComicListRepositoryImpl(
 
     private fun Resource<Response<GlobalResponse<ComicSummaryResponse>>>.getTreatedResponse(): Resource<List<ComicSummary>> {
         this.value()?.body()?.data?.results?.let {
-            val comicList = it.toDomain()
+            val comicList = it.toDomain().getOnlyNotRepeatedItems()
 
             updateCurrentComicsCount()
 
@@ -49,7 +50,16 @@ class ComicListRepositoryImpl(
         }
     }
 
+    private fun List<ComicSummary>.getOnlyNotRepeatedItems(): List<ComicSummary> {
+        val currentItemsId = currentComicList.map { it.id }.toSet()
+        val notRepeatedItems = this.filter { currentItemsId.contains(it.id).not() }
+
+        this@ComicListRepositoryImpl.currentComicList.addAll(notRepeatedItems)
+
+        return notRepeatedItems
+    }
+
     private fun updateCurrentComicsCount() {
-        currentComicsCount += limitOfComicsPerRequest
+        currentRequestedComicsCount += limitOfComicsPerRequest
     }
 }

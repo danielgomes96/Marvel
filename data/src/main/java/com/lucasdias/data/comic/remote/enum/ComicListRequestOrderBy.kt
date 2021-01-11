@@ -1,8 +1,8 @@
 package com.lucasdias.data.comic.remote.enum
 
 enum class ComicListRequestOrderBy(val text: String) {
-    NAME("name"),
+    TITLE("title"),
     MODIFIED("modified"),
-    REVERSE_NAME("-name"),
+    REVERSE_TITLE("-title"),
     REVERSE_MODIFIED("-modified")
 }
