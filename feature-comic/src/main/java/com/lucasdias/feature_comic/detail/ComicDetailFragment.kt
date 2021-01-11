@@ -11,7 +11,10 @@ import com.lucasdias.base.presentation.BaseFragment
 import com.lucasdias.core.resource.observe
 import com.lucasdias.domain.model.ComicDetail
 import com.lucasdias.extensions.findNavController
+import com.lucasdias.extensions.gone
 import com.lucasdias.feature_comic.R
+import com.lucasdias.feature_comic.databinding.ComicDetailSectionWithListBinding
+import com.lucasdias.feature_comic.databinding.ComicDetailSectionWithTextBinding
 import com.lucasdias.feature_comic.databinding.FragmentComicDetailBinding
 import com.lucasdias.feature_comic.detail.adapter.ComicDetailAdapter
 import com.lucasdias.feature_comic.di.CHARACTER_ADAPTER
@@ -130,18 +133,35 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
 
     override fun onSuccess(model: Any?) {
         super.onSuccess(model)
-        model as ComicDetail
+        updateViewContent(model as ComicDetail)
+    }
 
-        characterAdapter.updateList(model.characters)
-        priceAdapter.updateList(model.prices)
-        storyAdapter.updateList(model.stories)
-        creatorAdapter.updateList(model.creators)
+    private fun updateViewContent(comicDetail: ComicDetail) = with(binding) {
+        handleWithSectionContent(characterRecyclerViewComicDetail, characterAdapter, comicDetail.characters)
+        handleWithSectionContent(priceRecyclerViewComicDetail, priceAdapter, comicDetail.prices)
+        handleWithSectionContent(storyRecyclerViewComicDetail, storyAdapter, comicDetail.stories)
+        handleWithSectionContent(creatorRecyclerViewComicDetail, creatorAdapter, comicDetail.creators)
+        handleWithSectionContent(titleComicDetail, comicDetail.title)
+        handleWithSectionContent(descriptionComicDetail, comicDetail.description)
+        handleWithSectionContent(pageCountComicDetail, comicDetail.pageCount.toString())
 
-        with(binding) {
-            titleComicDetail.textComicDetailSectionWithText.text = model.title
-            descriptionComicDetail.textComicDetailSectionWithText.text = model.description
-            pageCountComicDetail.textComicDetailSectionWithText.text = model.pageCount.toString()
-            viewPagerComicDetail.updateImageUrls(model.images?.map { it.getUrl() }.orEmpty())
-        }
+        viewPagerComicDetail.updateImageUrls(comicDetail.images?.map { it.getUrl() }.orEmpty())
+    }
+
+    private fun handleWithSectionContent(
+        binding: ComicDetailSectionWithListBinding,
+        adapter: ComicDetailAdapter,
+        model: List<String>?
+    ) {
+        if (model.isNullOrEmpty()) binding.layoutComicSectionWithList.gone()
+        else adapter.updateList(model)
+    }
+
+    private fun handleWithSectionContent(
+        binding: ComicDetailSectionWithTextBinding,
+        model: String?
+    ) {
+        if (model.isNullOrEmpty()) binding.layoutComicSectionWithText.gone()
+        else binding.textComicDetailSectionWithText.text = model
     }
 }
