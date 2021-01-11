@@ -1,9 +1,9 @@
 package com.lucasdias.data.comic
 
 import com.lucasdias.core.resource.Resource
+import com.lucasdias.data.comic.mapper.toDomain
 import com.lucasdias.data.comic.remote.ComicListService
 import com.lucasdias.data.comic.remote.enum.ComicListRequestOrderBy
-import com.lucasdias.data.comic.mapper.toDomain
 import com.lucasdias.data.comic.remote.model.ComicSummaryResponse
 import com.lucasdias.data.comic.remote.model.GlobalResponse
 import com.lucasdias.domain.model.ComicSummary

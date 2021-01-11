@@ -53,8 +53,6 @@ fun CreatorsResponse.toDomain(): List<String>? {
 
 fun PriceResponse.toDomain(): String = this.price.toString()
 
-fun <T>List<T>.getOnlyNotRepeatedItem(): List<T> {
+fun <T> List<T>.getOnlyNotRepeatedItem(): List<T> {
     return this.toSet().toList()
 }
-
-
