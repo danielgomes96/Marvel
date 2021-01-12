@@ -5,14 +5,14 @@ import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.domain.model.Image
 import com.lucasdias.domain.usecase.FetchComicList
 import com.lucasdias.feature_comic.util.CoroutineTestRule
+import io.mockk.Runs
+import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.just
 import io.mockk.mockk
 import io.mockk.spyk
 import io.mockk.verify
-import io.mockk.Runs
-import io.mockk.coEvery
-import io.mockk.coVerify
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals
