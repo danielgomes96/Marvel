@@ -39,9 +39,9 @@ CI tool that allows the creation of customized workflows for repositories on Git
 
 In this application, two workflows were created. The first for `Main` branche and the second for` featureas e fixes` branches. The following are descriptions of the workflows.
 
-Main - unit tests, Ktlint and APK generation.
+Main - run unit tests, Ktlint and APK generation.
 
-Featureas e Fixes - unit tests and Ktlint.
+Featureas e Fixes - run unit tests and Ktlint.
 
 ## Architecture
 I tried to follow the concepts of Clean Architecture, so I divided the project into:
@@ -50,11 +50,11 @@ I tried to follow the concepts of Clean Architecture, so I divided the project i
 
 * feature-modules: contains the presentation layer of each feature (ex: feature-comic);
 
-* data module: the data layer contains all the code necessary to retrieve the data, whether from the local database or the service;
+* data module: the data layer contains all the code necessary to retrieve the data, whether from a local database or a service;
 
 * domain module: the business logic layer contains entities, use cases and interfaces to communicate with the data module;
 
-* core module: it has some implementations that are used by the rest of the application (ex: connectivity handler, request handler, etc.);
+* core module: it has some implementations that are used by the application (ex: connectivity handler, request handler, etc);
 
 * extension module: this module has extensions that can be reused throughout the project;
 
@@ -62,12 +62,11 @@ I tried to follow the concepts of Clean Architecture, so I divided the project i
 
 * base module: contains the base classes that are used by the application;
 
-* ui-component module: The UI components were created to facilitate its reuse and to have a standard in the application (facilitating the implementation of a Design System). This module has the UI components created;
+* ui-component module: The UI components were created to facilitate its reuse and to have a standard in the application (facilitating the implementation of a Design System);
 
 * buildSrc module: is where all the dependencies and versions used for the project relies.
 
 ## Code style
-
 The order of the methods and variables follow the following ordering pattern:
 * override;
 * public;
@@ -94,17 +93,13 @@ The order of the methods and variables follow the following ordering pattern:
  <p> MockK is a test lib for the Kotlin language. Its use is simple and has the advantage of competitors, the possibility of mocking methods of Objects and Companion Objects without having to create interfaces. On the other hand, it is an exclusive library for Kotlin, not working with the Java language. </p>
  
 ## Tests
-You can visualizate tests performed by me on an old project at the following links:
+Because of the time I tested only one class but it was tested with 100% coverage.
+* [unit test 1]( https://github.com/lucasdias4/Marvel/blob/main/feature-comic/src/test/java/com/lucasdias/feature_comic/list/ComicListViewModelTest.kt)
 
+
+You can also visualizate other tests performed by me on an old project at the following links:
 * [unit test 1]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/search/src/test/java/com/lucasdias/search/presentation/SearchViewModelTest.kt)
 * [unit test 2]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/factcatalog/src/test/java/com/lucasdias/factcatalog/FactCatalogAdapter.kt)
 * [unit test 3]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/search/src/test/java/com/lucasdias/search/domain/usecase/GetRandomCategoriesFromDatabaseTest.kt)
 * [unit test 4]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/search/src/test/java/com/lucasdias/search/data/historic/SearchHistoricRepositoryImplTest.kt)
 * [ui test 1]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/factcatalog/src/androidTest/java/com/lucasdias/search/presentation/FactCatalogFragmentTest.kt)
-
- 
-## Todo
-* apply code style;
-* remove logic code from view;
-* create tests;
-* create a custom toolbar with a spinner to sort list.
