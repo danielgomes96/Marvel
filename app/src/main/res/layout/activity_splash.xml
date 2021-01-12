@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bright_red"
+    android:background="@color/background_tertiary"
     tools:context="com.lucasdias.marvelcomics.splash.SplashActivity">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/logo_height_splash_activity"
         android:contentDescription="@string/logo_content_description_splash_activity"
-        android:src="@drawable/marvel_secondary_logo"
+        android:src="@drawable/marvel_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

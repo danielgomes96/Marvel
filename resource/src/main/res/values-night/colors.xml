@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="text_primary">@color/nero</color>
+    <color name="text_primary">@color/wild_sand</color>
     <color name="text_secondary">@color/wild_sand</color>
-    <color name="text_tertiary">@color/wild_sand</color>
-    <color name="background_primary">@color/wild_sand</color>
+    <color name="text_tertiary">@color/bright_red</color>
+    <color name="background_primary">@color/nero</color>
     <color name="background_secondary">@color/bright_red</color>
-    <color name="background_tertiary">@color/bright_red</color>
-    <color name="background_quaternary">@color/nero</color>
+    <color name="background_tertiary">@color/nero</color>
+    <color name="background_quaternary">@color/emperor</color>
 
     <color name="alto">#CFCFCF</color>
     <color name="bilbao">#177718</color>

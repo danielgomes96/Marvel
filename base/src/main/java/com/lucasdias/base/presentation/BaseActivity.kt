@@ -2,8 +2,10 @@ package com.lucasdias.base.presentation
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.annotation.NavigationRes
+import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -45,11 +47,11 @@ open class BaseActivity : AppCompatActivity() {
 
         fun launch(
             context: Context,
-            @NavigationRes graphId: Int,
+            @NavigationRes graphResId: Int,
             block: (() -> Bundle)? = null
         ) {
             val bundle = (block?.invoke() ?: Bundle()).apply {
-                putInt(GRAPH_ID_KEY, graphId)
+                putInt(GRAPH_ID_KEY, graphResId)
             }
 
             val intent = Intent(context, BaseActivity::class.java)

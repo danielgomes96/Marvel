@@ -11,7 +11,7 @@
         android:gravity="center"
         android:paddingVertical="@dimen/text_padding_vertical_comic_detail_list_item"
         android:textAppearance="@style/P3_bold"
-        android:textColor="@color/nero"
+        android:textColor="@color/text_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

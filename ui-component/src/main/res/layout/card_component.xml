@@ -32,7 +32,7 @@
             android:id="@+id/title_layout_card_component"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/bright_red"
+            android:background="@color/background_secondary"
             android:orientation="vertical"
             android:padding="@dimen/title_layout_padding_card_component">
 
@@ -45,7 +45,7 @@
                 android:gravity="center"
                 android:maxWidth="@dimen/title_text_view_max_width_card_component"
                 android:maxLines="1"
-                android:textColor="@color/wild_sand"
+                android:textColor="@color/text_secondary"
                 tools:text="Comic title" />
 
         </LinearLayout>
