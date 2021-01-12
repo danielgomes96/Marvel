@@ -28,7 +28,7 @@ class CardComponent @JvmOverloads constructor(
         image = findViewById(R.id.image_card_component)
         title = findViewById(R.id.title_card_component)
         informationCard = findViewById(R.id.information_card_view_card_component)
-        informationCardSetup()
+        setupInformationCard()
     }
 
     fun onComponentClickListener(onClick: (() -> Unit)?) {
@@ -47,7 +47,7 @@ class CardComponent @JvmOverloads constructor(
         onComponentClickListener(properties.action)
     }
 
-    private fun informationCardSetup() {
+    private fun setupInformationCard() {
         informationCard.setBackgroundColor(context.getColor(R.color.mine_shaft))
     }
 }

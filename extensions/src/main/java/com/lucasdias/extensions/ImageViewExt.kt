@@ -22,8 +22,8 @@ fun ImageView.loadImage(
         .`as`(Drawable::class.java)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
 
-    requestBuilder.listenerSetup(onLoadCompleted, onError)
-    requestBuilder.errorPlaceHolderSetup(errorPlaceHolderId)
+    requestBuilder.setupListener(onLoadCompleted, onError)
+    requestBuilder.setupErrorPlaceHolder(errorPlaceHolderId)
 
     requestBuilder
         .load(url)
@@ -31,7 +31,7 @@ fun ImageView.loadImage(
 }
 
 @SuppressLint("CheckResult")
-private fun RequestBuilder<Drawable>.listenerSetup(
+private fun RequestBuilder<Drawable>.setupListener(
     onLoadCompleted: () -> Unit,
     onError: () -> Unit
 ) {
@@ -59,7 +59,7 @@ private fun RequestBuilder<Drawable>.listenerSetup(
     })
 }
 
-private fun RequestBuilder<Drawable>.errorPlaceHolderSetup(errorPlaceHolderId: Int?) {
+private fun RequestBuilder<Drawable>.setupErrorPlaceHolder(errorPlaceHolderId: Int?) {
     errorPlaceHolderId?.let {
         this.error(errorPlaceHolderId)
     }

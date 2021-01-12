@@ -12,10 +12,10 @@ fun MaterialButton.startTextColorAnimation(
     colorEnd: Int = Color.TRANSPARENT,
     animationDuration: Long = 200L
 ) {
-    textAlphaAnimator(colorStart, colorEnd, duration = animationDuration).start()
+    getTextAlphaAnimator(colorStart, colorEnd, duration = animationDuration).start()
 }
 
-fun MaterialButton.textAlphaAnimator(vararg values: Int, duration: Long): ValueAnimator {
+fun MaterialButton.getTextAlphaAnimator(vararg values: Int, duration: Long): ValueAnimator {
     return ObjectAnimator.ofInt(this, "textColor", *values).apply {
         this.duration = duration
         setEvaluator(ArgbEvaluator())

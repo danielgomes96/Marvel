@@ -33,7 +33,7 @@ class ButtonComponent @JvmOverloads constructor(
     var isLoading = false
         set(value) {
             field = value
-            loadStateHandler(value)
+            handleLoadState(value)
         }
 
     init {
@@ -69,18 +69,18 @@ class ButtonComponent @JvmOverloads constructor(
     }
 
     private fun setup() {
-        textSetup(text)
-        cornerSetup(cornerType)
-        colorSetup(colorType)
-        sizeSetup(sizeType)
-        paddingSetup(cornerType)
+        setupText(text)
+        setupCorner(cornerType)
+        setupColor(colorType)
+        setupSize(sizeType)
+        setupPadding(cornerType)
     }
 
-    private fun textSetup(text: String) {
+    private fun setupText(text: String) {
         button.text = text
     }
 
-    private fun sizeSetup(sizeType: ButtonSizeType) {
+    private fun setupSize(sizeType: ButtonSizeType) {
         val height = context.getIntDimen(sizeType.heightId)
         val width = ViewGroup.LayoutParams.MATCH_PARENT
 
@@ -97,14 +97,14 @@ class ButtonComponent @JvmOverloads constructor(
         }
     }
 
-    private fun cornerSetup(cornerType: ButtonCornerType) {
+    private fun setupCorner(cornerType: ButtonCornerType) {
         button.cornerRadius = when (cornerType) {
             ButtonCornerType.SOFT_ROUND -> context.getIntDimen(R.dimen.soft_round_button_corner_radius_button_component)
             ButtonCornerType.SHARP -> 0
         }
     }
 
-    private fun paddingSetup(cornerType: ButtonCornerType) {
+    private fun setupPadding(cornerType: ButtonCornerType) {
         val horizontalPadding = when (cornerType) {
             ButtonCornerType.SOFT_ROUND -> context.getIntDimen(R.dimen.soft_round_button_padding_button_component)
             else -> 0
@@ -112,13 +112,13 @@ class ButtonComponent @JvmOverloads constructor(
         setPadding(horizontalPadding, 0, horizontalPadding, 0)
     }
 
-    private fun colorSetup(color: ButtonColorType) {
+    private fun setupColor(color: ButtonColorType) {
         button.setTextColor(context.getColor(color.textColor))
         button.setBackgroundColor(context.getColor(color.backgroundColor))
         progressBar.indeterminateDrawable.setTint(context.getColor(color.textColor))
     }
 
-    private fun loadStateHandler(isLoading: Boolean) {
+    private fun handleLoadState(isLoading: Boolean) {
         if (isLoading) {
             progressBar.startAlphaAnimation(
                 alphaStart = 0F,

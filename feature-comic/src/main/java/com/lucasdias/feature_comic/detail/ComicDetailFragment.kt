@@ -43,21 +43,21 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.setArgumentForRequest(args.comicId)
         super.onViewCreated(view, savedInstanceState)
-        bindingSetup(view)
-        observerSetup()
-        sectionsSetup()
-        backButtonSetup { findNavController().popBackStack() }
+        setupBinding(view)
+        setupObserver()
+        setupSections()
+        setupBackButton { findNavController().popBackStack() }
     }
 
-    private fun bindingSetup(view: View) {
+    private fun setupBinding(view: View) {
         binding = FragmentComicDetailBinding.bind(view)
     }
 
-    private fun observerSetup() {
+    private fun setupObserver() {
         viewModel.responseLiveData.observe(viewLifecycleOwner, ::onLoading, ::onSuccess, ::onError)
     }
 
-    private fun recyclerViewSetup(
+    private fun setupRecyclerView(
         recyclerView: RecyclerView,
         adapter: ComicDetailAdapter
     ) = with(recyclerView) {
@@ -69,7 +69,7 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
         isNestedScrollingEnabled = false
     }
 
-    private fun sectionsSetup() {
+    private fun setupSections() {
         sectionSetup(
             binding.titleComicDetail.titleComicSectionWithText,
             R.string.title_title_section_comic_detail_fragment
@@ -121,7 +121,7 @@ class ComicDetailFragment : BaseFragment<ComicDetail>(
         adapter: ComicDetailAdapter
     ) {
         textView.text = getString(stringIdRes)
-        recyclerViewSetup(recyclerView, adapter)
+        setupRecyclerView(recyclerView, adapter)
     }
 
     private fun sectionSetup(

@@ -1,6 +1,5 @@
 package com.lucasdias.base.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -29,7 +28,7 @@ abstract class BaseViewModel<T : Any?>(
 
         launch {
             val response = request()
-            requestHandler(response)
+            handleRequest(response)
         }
     }
 
@@ -47,24 +46,21 @@ abstract class BaseViewModel<T : Any?>(
     fun isNotInitialRequest() = isInitialRequest.not()
 
     private fun setLoadingStatus() {
-        requestHandler(Resource.Loading())
+        handleRequest(Resource.Loading())
     }
 
-    private fun requestHandler(resource: Resource<T>) {
+    private fun handleRequest(resource: Resource<T>) {
         when (resource) {
             is Resource.Success -> {
-                Log.i("Comic detail requestHandler", "Success")
                 isLoading = false
                 isInitialRequest = false
                 _responseMutableLiveData.postValue(resource)
             }
             is Resource.Error -> {
-                Log.i("Comic detail requestHandler", "Error")
                 isLoading = false
                 _responseMutableLiveData.postValue(resource)
             }
             is Resource.Loading -> {
-                Log.i("Comic detail requestHandler", "onLoading")
                 isLoading = true
                 _responseMutableLiveData.postValue(Resource.Loading())
             }

@@ -28,8 +28,3 @@ fun Context.obtainStyledAttrs(
 }
 
 fun Context.getIntDimen(@DimenRes resource: Int) = this.resources.getDimensionPixelOffset(resource)
-
-fun Context.getFloatDimen(@DimenRes resource: Int) = this.resources.getDimension(resource)
-
-fun Context.toast(message: CharSequence) =
-    Toast.makeText(this, message, Toast.LENGTH_LONG).show()

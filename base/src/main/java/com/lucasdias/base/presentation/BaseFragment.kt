@@ -62,7 +62,7 @@ abstract class BaseFragment<T : Any>(
         })
     }
 
-    open fun backButtonSetup(action: () -> Unit) {
+    open fun setupBackButton(action: () -> Unit) {
         val backButtonCallback: OnBackPressedCallback =
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {

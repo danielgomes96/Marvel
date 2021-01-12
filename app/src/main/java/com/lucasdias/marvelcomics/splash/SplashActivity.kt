@@ -17,11 +17,11 @@ class SplashActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        toolbarSetup()
+        setupToolbar()
         startNextViewWithDelay()
     }
 
-    private fun toolbarSetup() {
+    private fun setupToolbar() {
         supportActionBar?.hide()
     }
 

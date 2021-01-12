@@ -80,7 +80,7 @@ fun View.startAlphaAnimation(
     visibilityEnd: Int = View.VISIBLE,
     animationDuration: Long = 200L
 ) {
-    alphaAnimator(alphaStart, alphaEnd, duration = animationDuration) {
+    getAlphaAnimator(alphaStart, alphaEnd, duration = animationDuration) {
         doOnStart {
             alpha = alphaStart
             visibility = visibilityStart
@@ -96,7 +96,7 @@ fun View.startAlphaAnimation(
  * ObjectAnimator
  * - https://developer.android.com/guide/topics/graphics/prop-animation.html#views
  */
-fun View.alphaAnimator(
+fun View.getAlphaAnimator(
     vararg values: Float,
     duration: Long,
     block: (ObjectAnimator.() -> Unit)? = null

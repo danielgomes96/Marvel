@@ -20,11 +20,11 @@ open class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutIdRes)
-        navigationSetup()
-        toolbarSetup()
+        setupNavigation()
+        setupToolbar()
     }
 
-    private fun navigationSetup() {
+    private fun setupNavigation() {
         supportFragmentManager.findFragmentById(fragmentContainerIdRes)?.let { fragment ->
             navigationController = fragment.findNavController().apply {
                 val graph = navInflater.inflate(navigationGraphId)
@@ -33,7 +33,7 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    private fun toolbarSetup() {
+    private fun setupToolbar() {
         supportActionBar?.hide()
     }
 

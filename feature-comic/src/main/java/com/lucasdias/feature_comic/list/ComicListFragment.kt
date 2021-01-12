@@ -8,7 +8,7 @@ import com.lucasdias.core.resource.observe
 import com.lucasdias.domain.model.ComicSummary
 import com.lucasdias.extensions.animateVisibleToGone
 import com.lucasdias.extensions.findNavController
-import com.lucasdias.extensions.scrollSetup
+import com.lucasdias.extensions.setupScroll
 import com.lucasdias.feature_comic.R
 import com.lucasdias.feature_comic.databinding.FragmentComicListBinding
 import org.koin.android.ext.android.inject
@@ -34,7 +34,7 @@ class ComicListFragment : BaseFragment<List<ComicSummary>>(
         bindingSetup(view)
         observerSetup()
         recyclerViewSetup()
-        backButtonSetup { binding.recyclerView.smoothScrollToPosition(0) }
+        setupBackButton { binding.recyclerView.smoothScrollToPosition(0) }
     }
 
     private fun bindingSetup(view: View) {
@@ -51,7 +51,7 @@ class ComicListFragment : BaseFragment<List<ComicSummary>>(
             setHasFixedSize(true)
             this.layoutManager = layoutManager
             this.adapter = this@ComicListFragment.adapter
-            scrollSetup(layoutManager) { viewModel.requestNextPage() }
+            setupScroll(layoutManager) { viewModel.requestNextPage() }
     }
 
     override fun onLoading() {
