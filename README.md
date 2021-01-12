@@ -93,3 +93,10 @@ You can visualizate tests performed by me on an old project at the following lin
 * [unit test 3]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/search/src/test/java/com/lucasdias/search/domain/usecase/GetRandomCategoriesFromDatabaseTest.kt)
 * [unit test 4]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/search/src/test/java/com/lucasdias/search/data/historic/SearchHistoricRepositoryImplTest.kt)
 * [ui test 1]( https://github.com/lucasdias4/chuck_norris_facts/blob/master/factcatalog/src/androidTest/java/com/lucasdias/search/presentation/FactCatalogFragmentTest.kt)
+
+ 
+## Todo
+* apply code style;
+* remove logic code from view;
+* create tests;
+* create a custom toolbar with a spinner to sort list.
