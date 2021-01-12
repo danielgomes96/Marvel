@@ -7,10 +7,10 @@ import com.lucasdias.core.livedata.SingleLiveEvent
 
 class Connectivity(context: Context) {
 
-    private var isDeviceJustStarted = true
-    private var isConnected = true
     private val _liveData = SingleLiveEvent<Boolean>()
     val liveData: SingleLiveEvent<Boolean> = _liveData
+    private var isDeviceJustStarted = true
+    private var isConnected = true
 
     init {
         registerNetworkCallback(connectivityManager = getConnectivityManager(context))

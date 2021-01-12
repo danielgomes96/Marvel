@@ -12,10 +12,10 @@ import com.lucasdias.extensions.getIntOrThrow
 
 open class BaseActivity : AppCompatActivity() {
 
-    private lateinit var navigationController: NavController
     protected open val navigationGraphId: Int by lazy { intent.getIntOrThrow(GRAPH_ID_KEY) }
     protected open val layoutIdRes: Int by lazy { R.layout.activity_base }
     protected open val fragmentContainerIdRes: Int by lazy { R.id.fragment_container_base_activity }
+    private lateinit var navigationController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -13,11 +13,6 @@ class ComicListAdapter(private val navigateToComicDetailAction: (Int) -> Unit) :
 
     private val comicList = mutableListOf<ComicSummary>()
 
-    fun updateComicList(comicSummaries: List<ComicSummary>) {
-        this.comicList.addAll(comicSummaries)
-        notifyDataSetChanged()
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding = ComicListItemBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -34,6 +29,11 @@ class ComicListAdapter(private val navigateToComicDetailAction: (Int) -> Unit) :
         if (comicList.isNotEmpty()) {
             holder.bind(comicSummary = comicList[position])
         }
+    }
+
+    fun updateComicList(comicSummaries: List<ComicSummary>) {
+        this.comicList.addAll(comicSummaries)
+        notifyDataSetChanged()
     }
 
     class ViewHolder(

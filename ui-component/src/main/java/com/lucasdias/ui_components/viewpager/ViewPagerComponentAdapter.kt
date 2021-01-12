@@ -14,11 +14,6 @@ class ViewPagerComponentAdapter(private val context: Context) : PagerAdapter() {
 
     private val imageUrlList = mutableListOf<String>()
 
-    fun updateImageUrlList(imageUrlList: List<String>) {
-        this.imageUrlList.addAll(imageUrlList)
-        notifyDataSetChanged()
-    }
-
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return view === `object`
     }
@@ -43,5 +38,10 @@ class ViewPagerComponentAdapter(private val context: Context) : PagerAdapter() {
         val viewPager = container as ViewPager
         val view = `object` as View
         viewPager.removeView(view)
+    }
+
+    fun updateImageUrlList(imageUrlList: List<String>) {
+        this.imageUrlList.addAll(imageUrlList)
+        notifyDataSetChanged()
     }
 }

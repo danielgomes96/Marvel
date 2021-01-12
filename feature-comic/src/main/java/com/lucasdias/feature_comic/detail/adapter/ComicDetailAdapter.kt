@@ -9,13 +9,6 @@ class ComicDetailAdapter : RecyclerView.Adapter<ComicDetailAdapter.ViewHolder>()
 
     private val list = mutableListOf<String>()
 
-    fun updateList(list: List<String>?) {
-        if (list == null) return
-
-        this.list.addAll(list)
-        notifyDataSetChanged()
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding =
             ComicDetailSectionWithListListItemBinding
@@ -34,6 +27,13 @@ class ComicDetailAdapter : RecyclerView.Adapter<ComicDetailAdapter.ViewHolder>()
         if (list.isNotEmpty()) {
             holder.bind(text = list[position])
         }
+    }
+
+    fun updateList(list: List<String>?) {
+        if (list == null) return
+
+        this.list.addAll(list)
+        notifyDataSetChanged()
     }
 
     class ViewHolder(

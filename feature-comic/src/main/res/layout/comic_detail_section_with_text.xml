@@ -41,6 +41,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAppearance="@style/P3_bold"
-        android:textColor="@color/nero" />
+        android:textColor="@color/text_primary" />
 
 </LinearLayout>

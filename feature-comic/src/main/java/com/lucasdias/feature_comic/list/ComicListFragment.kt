@@ -37,23 +37,6 @@ class ComicListFragment : BaseFragment<List<ComicSummary>>(
         setupBackButton { binding.recyclerView.smoothScrollToPosition(0) }
     }
 
-    private fun bindingSetup(view: View) {
-        binding = FragmentComicListBinding.bind(view)
-    }
-
-    private fun observerSetup() {
-        viewModel.responseLiveData.observe(viewLifecycleOwner, ::onLoading, ::onSuccess, ::onError)
-    }
-
-    private fun recyclerViewSetup() = with(binding.recyclerView) {
-        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
-            setHasFixedSize(true)
-            this.layoutManager = layoutManager
-            this.adapter = this@ComicListFragment.adapter
-            setupScroll(layoutManager) { viewModel.requestNextPage() }
-    }
-
     override fun onLoading() {
         super.onLoading()
         showProgressbarForPaginationRequest(
@@ -73,6 +56,23 @@ class ComicListFragment : BaseFragment<List<ComicSummary>>(
         super.onError(throwable)
         showErrorSnackbarForPaginationRequest(viewModel.isNotInitialRequest())
         binding.progressBar.animateVisibleToGone()
+    }
+
+    private fun bindingSetup(view: View) {
+        binding = FragmentComicListBinding.bind(view)
+    }
+
+    private fun observerSetup() {
+        viewModel.responseLiveData.observe(viewLifecycleOwner, ::onLoading, ::onSuccess, ::onError)
+    }
+
+    private fun recyclerViewSetup() = with(binding.recyclerView) {
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+            setHasFixedSize(true)
+            this.layoutManager = layoutManager
+            this.adapter = this@ComicListFragment.adapter
+            setupScroll(layoutManager) { viewModel.requestNextPage() }
     }
 
     private fun navigateToComicDetail(comicId: Int) {
