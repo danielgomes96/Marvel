@@ -2,10 +2,8 @@ package com.lucasdias.base.presentation
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
 import androidx.annotation.NavigationRes
-import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController

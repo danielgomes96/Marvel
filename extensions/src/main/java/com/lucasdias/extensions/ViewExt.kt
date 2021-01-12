@@ -31,7 +31,8 @@ fun View.animateVisibleToInvisible() {
             alphaStart = 1F,
             alphaEnd = 0F,
             visibilityStart = View.VISIBLE,
-            visibilityEnd = View.INVISIBLE
+            visibilityEnd = View.INVISIBLE,
+            animationDuration = 500L
         )
     }
 }
@@ -42,7 +43,8 @@ fun View.animateInvisibleToVisible() {
             alphaStart = 0F,
             alphaEnd = 1F,
             visibilityStart = View.INVISIBLE,
-            visibilityEnd = View.VISIBLE
+            visibilityEnd = View.VISIBLE,
+            animationDuration = 500L
         )
     }
 }
@@ -53,7 +55,8 @@ fun View.animateVisibleToGone() {
             alphaStart = 1F,
             alphaEnd = 0F,
             visibilityStart = View.VISIBLE,
-            visibilityEnd = View.GONE
+            visibilityEnd = View.GONE,
+            animationDuration = 500L
         )
     }
 }
@@ -64,7 +67,8 @@ fun View.animateGoneToVisible() {
             alphaStart = 0F,
             alphaEnd = 1F,
             visibilityStart = View.GONE,
-            visibilityEnd = View.VISIBLE
+            visibilityEnd = View.VISIBLE,
+            animationDuration = 500L
         )
     }
 }
