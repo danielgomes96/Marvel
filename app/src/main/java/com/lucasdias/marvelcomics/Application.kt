@@ -18,9 +18,13 @@ class Application : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        setupKoin()
+    }
+
+    private fun setupKoin(){
         startKoin {
             androidContext(this@Application)
-            logger(dependencyInjectionLogger())
+            logger(setupDependencyInjectionLogger())
             modules(
                 listOf(
                     baseModule,
@@ -33,6 +37,6 @@ class Application : Application() {
         }
     }
 
-    private fun dependencyInjectionLogger(): Logger =
+    private fun setupDependencyInjectionLogger(): Logger =
         if (BuildConfig.DEBUG) AndroidLogger() else EmptyLogger()
 }

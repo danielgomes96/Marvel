@@ -9,8 +9,8 @@ class Connectivity(context: Context) {
 
     private var isDeviceJustStarted = true
     private var isConnected = true
-    private val _mutableLiveData = SingleLiveEvent<Boolean>()
-    val liveData: SingleLiveEvent<Boolean> = _mutableLiveData
+    private val _liveData = SingleLiveEvent<Boolean>()
+    val liveData: SingleLiveEvent<Boolean> = _liveData
 
     init {
         registerNetworkCallback(connectivityManager = getConnectivityManager(context))
@@ -34,7 +34,7 @@ class Connectivity(context: Context) {
 
         this.isConnected = isConnected
         isDeviceJustStarted = false
-        _mutableLiveData.postValue(isConnected)
+        _liveData.postValue(isConnected)
     }
 
     class ConnectivityCallback(val notifyConnectedState: (Boolean) -> Unit) :

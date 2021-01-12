@@ -17,11 +17,13 @@ class ComicDetailAdapter : RecyclerView.Adapter<ComicDetailAdapter.ViewHolder>()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemBinding = ComicDetailSectionWithListListItemBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
+        val itemBinding =
+            ComicDetailSectionWithListListItemBinding
+                .inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
 
         return ViewHolder(itemBinding)
     }

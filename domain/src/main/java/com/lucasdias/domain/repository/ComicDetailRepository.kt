@@ -7,7 +7,7 @@ interface ComicDetailRepository {
     suspend fun fetch(
         comicId: String,
         apiPublicKey: String,
-        timesmap: String,
+        timesMap: String,
         hash: String
     ): Resource<ComicDetail>
 }

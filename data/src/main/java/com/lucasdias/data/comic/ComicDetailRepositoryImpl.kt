@@ -16,7 +16,7 @@ class ComicDetailRepositoryImpl(
     override suspend fun fetch(
         comicId: String,
         apiPublicKey: String,
-        timesmap: String,
+        timesMap: String,
         hash: String
     ): Resource<ComicDetail> {
         val response: Resource<Response<GlobalResponse<ComicDetailResponse>>> =
@@ -24,7 +24,7 @@ class ComicDetailRepositoryImpl(
                 service.fetchComicDetail(
                     comicId = comicId,
                     apiKey = apiPublicKey,
-                    timestamp = timesmap,
+                    timestamp = timesMap,
                     hash = hash
                 )
             }

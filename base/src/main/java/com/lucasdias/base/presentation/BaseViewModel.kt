@@ -14,9 +14,9 @@ abstract class BaseViewModel<T : Any?>(
     private val coroutineContext: CoroutineDispatcher
 ) : ViewModel() {
 
-    val responseLiveData: LiveData<Resource<T>> by lazy { _responseMutableLiveData }
+    val responseLiveData: LiveData<Resource<T>> by lazy { _responseLiveData }
     private var hasNetworkConnectivity = true
-    private val _responseMutableLiveData: MutableLiveData<Resource<T>> by lazy { MutableLiveData<Resource<T>>() }
+    private val _responseLiveData: MutableLiveData<Resource<T>> by lazy { MutableLiveData<Resource<T>>() }
     private var isInitialRequest = true
     private var isLoading = false
 
@@ -54,15 +54,15 @@ abstract class BaseViewModel<T : Any?>(
             is Resource.Success -> {
                 isLoading = false
                 isInitialRequest = false
-                _responseMutableLiveData.postValue(resource)
+                _responseLiveData.postValue(resource)
             }
             is Resource.Error -> {
                 isLoading = false
-                _responseMutableLiveData.postValue(resource)
+                _responseLiveData.postValue(resource)
             }
             is Resource.Loading -> {
                 isLoading = true
-                _responseMutableLiveData.postValue(Resource.Loading())
+                _responseLiveData.postValue(Resource.Loading())
             }
         }
     }

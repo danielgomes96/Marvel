@@ -11,12 +11,12 @@ class FetchComicDetail(
 ) {
 
     suspend operator fun invoke(comicId: String): Resource<ComicDetail> {
-        val timesmap = System.currentTimeMillis().toString()
+        val timesMap = System.currentTimeMillis().toString()
         val apiPublicKey = BuildConfig.MARVEL_API_PUBLIC_KEY
         val apiPrivateKey = BuildConfig.MARVEL_API_PRIVATE_KEY
 
-        val hash = getHash(timesmap, apiPrivateKey, apiPublicKey)
+        val hash = getHash(timesMap, apiPrivateKey, apiPublicKey)
 
-        return comicDetailRepository.fetch(comicId, apiPublicKey, timesmap, hash)
+        return comicDetailRepository.fetch(comicId, apiPublicKey, timesMap, hash)
     }
 }
