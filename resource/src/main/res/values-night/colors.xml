@@ -6,7 +6,7 @@
     <color name="background_primary">@color/nero</color>
     <color name="background_secondary">@color/bright_red</color>
     <color name="background_tertiary">@color/nero</color>
-    <color name="background_quaternary">@color/emperor</color>
+    <color name="background_quaternary">@color/nero</color>
 
     <color name="alto">#CFCFCF</color>
     <color name="bilbao">#177718</color>
