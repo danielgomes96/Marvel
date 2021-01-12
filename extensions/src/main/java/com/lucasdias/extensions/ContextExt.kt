@@ -3,7 +3,6 @@ package com.lucasdias.extensions
 import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
-import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.annotation.DimenRes
 import androidx.annotation.StyleRes

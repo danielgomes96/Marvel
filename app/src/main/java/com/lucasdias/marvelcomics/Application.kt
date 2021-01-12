@@ -21,7 +21,7 @@ class Application : Application() {
         setupKoin()
     }
 
-    private fun setupKoin(){
+    private fun setupKoin() {
         startKoin {
             androidContext(this@Application)
             logger(setupDependencyInjectionLogger())
