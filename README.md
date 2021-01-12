@@ -18,11 +18,11 @@ The application accesses Marvel's API and displays a list of all the company's c
  <img src="/pictures/comic_detail_default_theme_screen.jpg" width=20% height=20%>
 </p>
 <p align="center">
- <img src="/pictures/error_screen.jpg" width=15% height=15%>
- <img src="/pictures/error_screen_animated.jpg" width=15% height=15%>
- <img src="/pictures/loading_screen.jpg" width=15% height=15%>
- <img src="/pictures/connected_snackbar_screen.jpg" width=15% height=15%>
- <img src="/pictures/disconnected_snackbar_screen.jpg" width=15% height=15%>
+ <img src="/pictures/error_screen.jpg" width=18% height=18%>
+ <img src="/pictures/error_screen_animated.jpg" width=18% height=18%>
+ <img src="/pictures/loading_screen.jpg" width=18% height=18%>
+ <img src="/pictures/connected_snackbar_screen.jpg" width=18% height=18%>
+ <img src="/pictures/disconnected_snackbar_screen.jpg" width=18% height=18%>
 </p>
 
 ## Automation
