@@ -62,4 +62,9 @@ dependencies {
     implementation Dependencies.UI.material
     implementation Dependencies.UI.recycler_view
     implementation Dependencies.UI.shimmer
+
+    testImplementation Dependencies.Test.core_testing
+    testImplementation Dependencies.Test.junit
+    testImplementation Dependencies.Test.mockk
+    testImplementation Dependencies.Test.kotlinx_coroutines_test
 }
