@@ -3,14 +3,14 @@ package com.lucasdias.core.connectivity
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import com.lucasdias.core.livedata.SingleLiveEvent
 
 class Connectivity(context: Context) {
 
     private var isDeviceJustStarted = true
-    private val _mutableLiveData = MutableLiveData<Boolean>()
-    val liveData: LiveData<Boolean> = _mutableLiveData
+    private var isConnected = true
+    private val _mutableLiveData = SingleLiveEvent<Boolean>()
+    val liveData: SingleLiveEvent<Boolean> = _mutableLiveData
 
     init {
         registerNetworkCallback(connectivityManager = getConnectivityManager(context))
@@ -30,8 +30,9 @@ class Connectivity(context: Context) {
     }
 
     private fun notifyConnectedState(isConnected: Boolean) {
-        if (isDeviceJustStarted && isConnected) return
+        if (this.isConnected == isConnected) return
 
+        this.isConnected = isConnected
         isDeviceJustStarted = false
         _mutableLiveData.postValue(isConnected)
     }
