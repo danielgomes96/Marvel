@@ -34,11 +34,6 @@ class ComicListViewModelTest {
     private val viewModel =
         spyk(ComicListViewModel(fetchComicList, coroutinesTestRule.testDispatcher))
 
-    @Before
-    fun setUp() {
-        MockitoAnnotations.initMocks(this)
-    }
-
     @Test
     fun `IF the application calls the next page while not loading another request THEN calls the executeRequest`() {
         every { viewModel.isNotLoading() } returns true
@@ -78,8 +73,7 @@ class ComicListViewModelTest {
     }
 
     @Test
-    fun `IF when making the request and the request is not blocked THEN call use case fetchComicList`() =
-        runBlockingTest {
+    fun `IF when making the request and the request is not blocked THEN call use case fetchComicList`() = runBlockingTest {
             viewModel.requestIsBlocked = false
             coEvery { fetchComicList() } returns comicSummaryListMocked
 
