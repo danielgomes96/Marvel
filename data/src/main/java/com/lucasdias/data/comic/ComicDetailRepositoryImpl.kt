@@ -31,6 +31,9 @@ class ComicDetailRepositoryImpl(
         return response.getTreatedResponse()
     }
 
+    /**
+     * This is necessary because I treat an empty list as an error
+     */
     private fun Resource<Response<GlobalResponse<ComicDetailResponse>>>.getTreatedResponse(): Resource<ComicDetail> {
         this.value()?.body()?.data?.results?.first()?.let {
             val comicDetail = it.toDomain()

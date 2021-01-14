@@ -38,6 +38,9 @@ class ComicListRepositoryImpl(
         return response.getTreatedResponse()
     }
 
+    /**
+     * This is necessary because I treat an empty list as an error
+     */
     private fun Resource<Response<GlobalResponse<ComicSummaryResponse>>>.getTreatedResponse(): Resource<List<ComicSummary>> {
         this.value()?.body()?.data?.results?.let {
             val comicList = it.toDomain().getOnlyNotRepeatedItems()

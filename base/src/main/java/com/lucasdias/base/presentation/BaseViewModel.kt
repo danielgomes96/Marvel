@@ -62,7 +62,7 @@ abstract class BaseViewModel<T : Any?>(
             }
             is Resource.Loading -> {
                 isLoading = true
-                _responseLiveData.postValue(Resource.Loading())
+                _responseLiveData.postValue(resource)
             }
         }
     }
