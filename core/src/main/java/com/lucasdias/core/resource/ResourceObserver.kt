@@ -12,7 +12,7 @@ class ResourceObserver<T>(
         when (resource) {
             is Resource.Loading -> loading?.invoke()
             is Resource.Success -> success?.invoke(resource.value)
-            is Resource.Error -> error?.invoke(resource.throwable)
+            is Resource.Error -> error?.invoke(resource.exception)
         }
     }
 }

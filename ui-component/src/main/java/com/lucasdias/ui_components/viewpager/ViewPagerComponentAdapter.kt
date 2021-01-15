@@ -28,7 +28,7 @@ class ViewPagerComponentAdapter(private val context: Context) : PagerAdapter() {
         val viewPager = container as ViewPager
         val imageView: ImageView = view.findViewById(R.id.picture_image_view_pager_item)
 
-        //TODO: Add an error place holder
+        // TODO: Add an error place holder
         imageView.loadImage(imageUrlList[position])
         viewPager.addView(view)
 

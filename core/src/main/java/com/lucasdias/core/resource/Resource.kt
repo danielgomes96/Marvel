@@ -11,9 +11,9 @@ sealed class Resource<T> {
         override fun value() = value
         override fun error() = null
     }
-    data class Error<T>(val throwable: Exception) : Resource<T>() {
+    data class Error<T>(val exception: Exception) : Resource<T>() {
         override fun value() = null
-        override fun error() = throwable
+        override fun error() = exception
     }
     class Loading<T> : Resource<T>() {
         override fun value() = null

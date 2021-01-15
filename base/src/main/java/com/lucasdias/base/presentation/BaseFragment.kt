@@ -34,24 +34,24 @@ abstract class BaseFragment<T : Any>(
         super.onViewCreated(view, savedInstanceState)
 
         connectivitySetup()
-        errorViewSetup(view)
-        successViewSetup(view)
-        loadingViewSetup(view)
+        setupErrorView(view)
+        setupSuccessView(view)
+        setupLoadingView(view)
         viewModel.executeRequest()
     }
 
-    private fun successViewSetup(view: View) {
+    private fun setupSuccessView(view: View) {
         successView = view.findViewById(successViewId)
     }
 
-    private fun errorViewSetup(view: View) {
+    private fun setupErrorView(view: View) {
         errorView = view.findViewById(errorViewId)
         errorView.button.onComponentClickListener {
             viewModel.executeRequest()
         }
     }
 
-    private fun loadingViewSetup(view: View) {
+    private fun setupLoadingView(view: View) {
         loadingView = view.findViewById(loadingViewId)
     }
 
